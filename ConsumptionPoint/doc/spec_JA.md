@@ -3,11 +3,14 @@
 =================  
 [オープンライセンス](https://github.com/smart-data-models//dataModel.Consumption/blob/master/ConsumptionPoint/LICENSE.md)  
 [ドキュメント自動生成](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+グローバルな記述です。**ある消費地に関する情報**。  
+バージョン: 0.0.1  
 
 ## プロパティ一覧  
 
-必要なプロパティ  
-- 必要なプロパティはありません  ## プロパティのデータモデル記述  
+- `address`: 郵送先住所  - `alternateName`: この項目の別称  - `areaServed`: サービスまたは提供品が提供される地理的な地域  - `consumptionPointCategory`: 消費点のカテゴリー。Enum:'建物, 街灯, 車両'.  - `dataProvider`: 調和されたデータエンティティの提供者を識別する一連の文字。  - `dateCreated`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `dateModified`: エンティティの最終更新のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description`: このアイテムの説明  - `id`: エンティティの一意な識別子  - `location`: アイテムへの Geojson リファレンス。Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygonのいずれかを指定することができる。  - `name`: このアイテムの名称です。  - `owner`: 所有者の一意のIDを参照するJSONエンコードされた文字列を含むリストです。  - `seeAlso`: 項目に関する追加リソースを指すURIのリスト。  - `source`: エンティティデータの元のソースをURLで示す一連の文字。ソースプロバイダの完全修飾ドメイン名、またはソースオブジェクトのURLであることが推奨されます。  - `type`: NGSI エンティティタイプ。コードは、消費地点を記述するために使用される。    
+必要なプロパティ  
+- `id`  - `type`  ## プロパティのデータモデル記述  
 アルファベット順に並びます（クリックで詳細へ）  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
@@ -299,10 +302,260 @@ ConsumptionPoint:
 ## ペイロードの例  
 #### 消費ポイント NGSI-v2 キー値例  
 以下は、ConsumptionPointをJSON-LD形式でkey-valuesにした例である。これは、`options=keyValues`を使用した場合にNGSI-v2と互換性があり、個々のエンティティのコンテキストデータを返します。  
+```json  
+{  
+    "id": "did:consumpoint:EN04",  
+    "type": "ConsumptionPoint",  
+    "consumptionPointCategory": ["building"],  
+    "name": "CEIP JOAN MARAGALL",  
+    "alternateName": "Centre d'educació infantil iprimaria Joan Maragall",  
+    "address": {  
+        "addressCountry": "ES",  
+        "streetAddress": "Passeig del Pintor Sert, 1-9",  
+        "addressLocality": "La Llagosta, Barcelona",  
+        "postalCode": "08120"  
+    },  
+    "code": "EN04",  
+    "dateCreated": "2016-08-08T10:18:16Z",  
+    "dateModified": "2016-08-08T10:18:16Z",  
+    "description": "Edifici pertanyent al centre educatiu",  
+    "location": {  
+        "type": "Polygon",  
+        "coordinates": [  
+            [  
+                [  
+                    100,  
+                    0  
+                ],  
+                [  
+                    101,  
+                    0  
+                ],  
+                [  
+                    101,  
+                    1  
+                ],  
+                [  
+                    100,  
+                    1  
+                ],  
+                [  
+                    100,  
+                    0  
+                ]  
+            ]  
+        ]  
+    }  
+}  
+```  
 #### 消費ポイント NGSI-v2 正規化例  
 以下は、ConsumptionPointをJSON-LD形式で正規化した例である。これは、オプションを使用しない場合、NGSI-v2と互換性があり、個々のエンティティのコンテキストデータを返します。  
+```json  
+{  
+  "id": "did:consumpoint:EN04",  
+  "type": "ConsumptionPoint",  
+  "consumptionPointCategory": {  
+    "type": "Array",  
+    "value": [  
+      "building"  
+    ]  
+  },  
+  "name": {  
+    "type": "Text",  
+    "value": "CEIP JOAN MARAGALL"  
+  },  
+  "alternateName": {  
+    "type": "Text",  
+    "value": "Centre d'educació infantil iprimaria Joan Maragall"  
+  },  
+  "address": {  
+    "type": "StructuredValue",  
+    "values": {  
+      "addressCountry": "ES",  
+      "streetAddress": "Passeig del Pintor Sert, 1-9",  
+      "addressLocality": "La Llagosta, Barcelona",  
+      "postalCode": "08120"  
+    }  
+  },  
+  "code": {  
+    "type": "Text",  
+    "value": "EN04"  
+  },  
+  "dateCreated": {  
+    "type": "DateTime",  
+    "value": "2016-08-08T10:18:16Z"  
+  },  
+  "dateModified": {  
+    "type": "DateTime",  
+    "value": "2016-08-08T10:18:16Z"  
+  },  
+  "description": {  
+    "type": "Text",  
+    "value": "Edifici pertanyent al centre educatiu"  
+  },  
+  "location": {  
+    "type": "geo:json",  
+    "value": {  
+      "type": "Polygon",  
+      "coordinates": [  
+        [  
+          [  
+            100,  
+            0  
+          ],  
+          [  
+            101,  
+            0  
+          ],  
+          [  
+            101,  
+            1  
+          ],  
+          [  
+            100,  
+            1  
+          ],  
+          [  
+            100,  
+            0  
+          ]  
+        ]  
+      ]  
+    }  
+  }  
+}  
+```  
 #### 消費ポイント NGSI-LD キー値例  
 以下は、ConsumptionPointをJSON-LD形式でkey-valuesにした例です。これは `options=keyValues` を使用した場合に NGSI-LD と互換性があり、個々のエンティティのコンテキストデータを返します。  
+```json  
+{  
+  "id": "did:consumpoint:EN04",  
+  "type": "ConsumptionPoint",  
+  "consumptionPointCategory": [  
+    "building"  
+  ],  
+  "name": "CEIP JOAN MARAGALL",  
+  "alternateName": "Centre d'educaciÃ³ infantil iprimaria Joan Maragall",  
+  "address": {  
+    "addressCountry": "ES",  
+    "streetAddress": "Passeig del Pintor Sert, 1-9",  
+    "addressLocality": "La Llagosta, Barcelona",  
+    "postalCode": "08120"  
+  },  
+  "code": "EN04",  
+  "dateCreated": "2016-08-08T10:18:16Z",  
+  "dateModified": "2016-08-08T10:18:16Z",  
+  "description": "Edifici pertanyent al centre educatiu",  
+  "location": {  
+    "type": "Polygon",  
+    "coordinates": [  
+      [  
+        [  
+          100,  
+          0  
+        ],  
+        [  
+          101,  
+          0  
+        ],  
+        [  
+          101,  
+          1  
+        ],  
+        [  
+          100,  
+          1  
+        ],  
+        [  
+          100,  
+          0  
+        ]  
+      ]  
+    ]  
+  },  
+  "@context": [  
+    "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld"  
+  ]  
+}  
+```  
 #### 消費ポイント NGSI-LD 正規化例  
 以下は、ConsumptionPointをJSON-LD形式で正規化した例である。これはオプションを使用しない場合のNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
+```json  
+{  
+    "id": "did:consumpoint:EN04",  
+    "type": "ConsumptionPoint",  
+    "consumptionPointCategory": {  
+        "type": "Property",  
+        "value": [  
+            "building"  
+        ]  
+    },  
+    "name": {  
+        "type": "Property",  
+        "value": "CEIP JOAN MARAGALL"  
+    },  
+    "alternateName": {  
+        "type": "Property",  
+        "value": "Centre d'educaciÃ³ infantil iprimaria Joan Maragall"  
+    },  
+    "address": {  
+        "type": "Property",  
+        "values": {  
+             "addressCountry": "ES",  
+        "streetAddress": "Passeig del Pintor Sert, 1-9",  
+        "addressLocality": "La Llagosta, Barcelona",  
+        "postalCode": "08120"  
+        }  
+    },  
+    "code": {  
+        "type": "Property",  
+        "value": "EN04"  
+    },  
+    "dateCreated": {  
+        "type": "Property",  
+        "value": "2016-08-08T10:18:16Z"  
+    },  
+    "dateModified": {  
+        "type": "Property",  
+        "value": "2016-08-08T10:18:16Z"  
+    },  
+    "description": {  
+        "type": "Property",  
+        "value": "Edifici pertanyent al centre educatiu"  
+    },  
+    "location": {  
+        "type": "Geoproperty",  
+        "value": {  
+            "type": "Polygon",  
+            "coordinates": [  
+                [  
+                    [  
+                        100,  
+                        0  
+                    ],  
+                    [  
+                        101,  
+                        0  
+                    ],  
+                    [  
+                        101,  
+                        1  
+                    ],  
+                    [  
+                        100,  
+                        1  
+                    ],  
+                    [  
+                        100,  
+                        0  
+                    ]  
+                ]  
+            ]  
+        }  
+    },  
+    "@context": [  
+        "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld"  
+    ]  
+}  
+```  
 マグニチュード単位の扱いについては、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照してください。  
