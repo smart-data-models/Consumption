@@ -1,13 +1,16 @@
 [![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
-Entité : Coût de la consommation  
-================================  
+Entité : ConsumptionCost  
+========================  
 [Licence ouverte] (https://github.com/smart-data-models//dataModel.Consumption/blob/master/ConsumptionCost/LICENSE.md)  
 [document généré automatiquement] (https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+Description globale : **Information sur l'énergie consommée et son coût par point de consommation**.  
+version : 0.0.1  
 
 ## Liste des propriétés  
 
-Propriétés requises  
-- Aucune propriété requise  ## Description des propriétés du modèle de données  
+- `address`: L'adresse postale  - `alternateName`: Un nom alternatif pour cet élément  - `areaServed`: La zone géographique où un service ou un article offert est fourni  - `consumptionPoint`: Identifiant du point de consommation auquel l'entité se réfère.  - `dataProvider`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated`: Horodatage de la création de l'entité. Celui-ci sera généralement attribué par la plateforme de stockage.  - `dateModified`: Horodatage de la dernière modification de l'entité. Il sera généralement attribué par la plateforme de stockage.  - `description`: Une description de cet article  - `energyConsumedAndCost`: Tableau avec la consommation d'énergie et le coût par type d'énergie.  - `id`: Identifiant unique de l'entité  - `location`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une ligne, d'un polygone, d'un point multiple, d'une ligne multiple ou d'un polygone multiple.  - `month`: Le mois auquel l'entité se réfère. Format MM, ex : "07  - `name`: Le nom de cet élément.  - `owner`: Une liste contenant une séquence de caractères codée en JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso`: liste d'uri pointant vers des ressources supplémentaires sur l'élément  - `source`: Une séquence de caractères donnant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine entièrement qualifié du fournisseur source ou l'URL de l'objet source.  - `type`: Type d'entité NGSI. Il doit s'agir de ConsumptionCost.  - `year`: L'année à laquelle l'entité se réfère. Format YYYY, ex : "2022    
+Propriétés requises  
+- `consumptionPoint`  - `energyConsumedAndCost`  - `id`  - `type`  ## Description des propriétés du modèle de données  
 Classés par ordre alphabétique (cliquez pour plus de détails)  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
@@ -369,10 +372,231 @@ ConsumptionCost:
 ## Exemples de charges utiles  
 #### ConsommationCoût Valeurs-clés NGSI-v2 Exemple  
 Voici un exemple de ConsumptionCost au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-v2 lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
+```json  
+{  
+    "id": "did:enerconsumcost:2022-07-3325",  
+    "type": "ConsumptionCost",  
+    "year": "2022",  
+    "month": "07",  
+    "consumptionPoint":  
+        "did:consumpoint:EN04"  
+    ,  
+    "energyConsumedAndCost": [{  
+            "id": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX",  
+            "energyType": "electricity",  
+            "supplyName": "Electric Company, S.A.",  
+            "energyConsumed": {  
+                "measurementUnit": "KWH",  
+                "value": 800.00  
+            },  
+            "energyAmount": {  
+                "currency": "EUR",  
+                "value": 374.00  
+            }  
+        },  
+        {  
+            "id": "did:ener:gas:ESXXXXXXXXXXXXXXXXXXXX",  
+            "type": "gas",  
+            "supplyName": "Gas Company, S.A.",  
+            "consumption": {  
+                "measurementUnit": "MTQ",  
+                "value": 35.00  
+            },  
+            "amount": {  
+                "currency": "EUR",  
+                "value": 250.32  
+            }  
+        },  
+        {  
+            "id": "did:ener:wat:02060767",  
+            "type": "water",  
+            "supplyName": "Water Company",  
+            "consumption": {  
+                "measurementUnit": "MTQ",  
+                "value": 33.00  
+            },  
+            "amount": {  
+                "currency": "EUR",  
+                "value": 110.34  
+            }  
+        }  
+    ]  
+}  
+```  
 #### Coût de consommation NGSI-v2 normalisé Exemple  
 Voici un exemple d'un ConsumptionCost au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-v2 lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
+```json  
+{  
+  "id": "did:enerconsumcost:2022-07-3325",  
+  "type": "ConsumptionCost",  
+  "year": {  
+    "type": "Text",  
+    "value": "2022"  
+  },  
+  "month": {  
+    "type": "Text",  
+    "value": "07"  
+  },  
+  "consumptionPoint": {  
+    "type": "Relationship",  
+    "value":  
+      "did:consumpoint:EN04"  
+  },  
+  "energyConsumedAndCost": [  
+    {  
+      "type": "StructuredValue",  
+      "value": {  
+        "id": {  
+          "type": "Text",  
+          "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"  
+        },  
+        "energyType": {  
+          "type": "Text",  
+          "value": "electricity"  
+        },  
+        "supplyName": {  
+          "type": "Text",  
+          "value": "Electric Company, S.A."  
+        },  
+        "energyConsumed": {  
+          "type": "StructuredValue",  
+          "value": {  
+            "measurementUnit": {  
+              "type": "Text",  
+              "value": "KWH"  
+            },  
+            "value": {  
+              "type": "Number",  
+              "value": 800.00  
+            }  
+          }  
+        },  
+        "energyAmount": {  
+          "type": "StructuredValue",  
+          "value": {  
+            "currency": {  
+              "type": "Text",  
+              "value": "EUR"  
+            },  
+            "value": {  
+              "type": "Number",  
+              "value": 374.00  
+            }  
+          }  
+        }  
+      }  
+    }  
+  ]  
+}  
+```  
 #### ConsommationCoût Valeurs-clés NGSI-LD Exemple  
 Voici un exemple de ConsumptionCost au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-LD lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
+```json  
+{  
+  "id": "did:enerconsumcost:2022-07-3325",  
+  "type": "ConsumptionCost",  
+  "year": "2022",  
+  "month": "07",  
+  "consumptionPoint":  
+    "did:consumpoint:EN04"  
+  ,  
+  "energyConsumedAndCost": [  
+    {  
+      "id": {  
+        "type": "Property",  
+        "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"  
+      },  
+      "energyType": {  
+        "type": "Property",  
+        "value": "electricity"  
+      },  
+      "supplyName": {  
+        "type": "Property",  
+        "value": "Electric Company, S.A."  
+      },  
+      "energyConsumed": {  
+        "measurementUnit": "KWH",  
+        "value": 800.00  
+      },  
+      "energyAmount": {  
+        "currency": "EUR",  
+        "value": 374.00  
+      }  
+    }  
+  ],  
+  "@context": [  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/context.jsonld"  
+  ]  
+}  
+```  
 #### Coût de consommation NGSI-LD normalisé Exemple  
 Voici un exemple d'un ConsumptionCost au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
+```json  
+{  
+  "id": "did:enerconsumcost:2022-07-3325",  
+  "type": "ConsumptionCost",  
+  "year": {  
+    "type": "Property",  
+    "value": "2022"  
+  },  
+  "month": {  
+    "type": "Property",  
+    "value": "07"  
+  },  
+  "consumptionPoint": {  
+    "type": "Relationship",  
+    "object": "did:consumpoint:EN04"  
+  },  
+  "energyConsumedAndCost": [  
+    {  
+      "type": "Property",  
+      "value": {  
+        "id": {  
+          "type": "Property",  
+          "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"  
+        },  
+        "energyType": {  
+          "type": "Property",  
+          "value": "electricity"  
+        },  
+        "supplyName": {  
+          "type": "Property",  
+          "value": "Electric Company, S.A."  
+        },  
+        "energyConsumed": {  
+          "type": "Property",  
+          "value": {  
+            "measurementUnit": {  
+              "type": "Property",  
+              "value": "KWH"  
+            },  
+            "value": {  
+              "type": "Property",  
+              "value": 800.00  
+            }  
+          }  
+        },  
+        "energyAmount": {  
+          "type": "Property",  
+          "value": {  
+            "currency": {  
+              "type": "Text",  
+              "value": "EUR"  
+            },  
+            "value": {  
+              "type": "Number",  
+              "value": 374.00  
+            }  
+          }  
+        }  
+      }  
+    }  
+  ],  
+  "@context": [  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/context.jsonld"  
+  ]  
+}  
+```  
 Voir [FAQ 10](https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse sur la façon de traiter les unités de magnitude.  
