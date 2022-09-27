@@ -3,11 +3,14 @@
 =========================  
 [Licencia abierta](https://github.com/smart-data-models//dataModel.Consumption/blob/master/ConsumptionPoint/LICENSE.md)  
 [documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+Descripción global: **Información sobre un punto de consumo determinado**  
+versión: 0.0.1  
 
 ## Lista de propiedades  
 
-Propiedades requeridas  
-- No hay propiedades requeridas  ## Descripción del modelo de datos de las propiedades  
+- `address`: La dirección postal  - `alternateName`: Un nombre alternativo para este artículo  - `areaServed`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  - `consumptionPointCategory`: Categoría del punto de consumo. Enum:'edificio, farola, vehículo'  - `dataProvider`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada.  - `dateCreated`: Marca de tiempo de creación de la entidad. Suele ser asignada por la plataforma de almacenamiento.  - `dateModified`: Marca de tiempo de la última modificación de la entidad. Normalmente será asignada por la plataforma de almacenamiento.  - `description`: Una descripción de este artículo  - `id`: Identificador único de la entidad  - `location`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon  - `name`: El nombre de este artículo.  - `owner`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios  - `seeAlso`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source`: Una secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type`: Tipo de entidad NGSI. El código se utiliza para describir un punto de consumo.    
+Propiedades requeridas  
+- `id`  - `type`  ## Descripción del modelo de datos de las propiedades  
 Ordenados alfabéticamente (haga clic para ver los detalles)  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
@@ -299,10 +302,260 @@ ConsumptionPoint:
 ## Ejemplo de carga útil  
 #### Consumo de valores clave NGSI-v2 Ejemplo  
 Aquí hay un ejemplo de un ConsumptionPoint en formato JSON-LD como key-values. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+```json  
+{  
+    "id": "did:consumpoint:EN04",  
+    "type": "ConsumptionPoint",  
+    "consumptionPointCategory": ["building"],  
+    "name": "CEIP JOAN MARAGALL",  
+    "alternateName": "Centre d'educació infantil iprimaria Joan Maragall",  
+    "address": {  
+        "addressCountry": "ES",  
+        "streetAddress": "Passeig del Pintor Sert, 1-9",  
+        "addressLocality": "La Llagosta, Barcelona",  
+        "postalCode": "08120"  
+    },  
+    "code": "EN04",  
+    "dateCreated": "2016-08-08T10:18:16Z",  
+    "dateModified": "2016-08-08T10:18:16Z",  
+    "description": "Edifici pertanyent al centre educatiu",  
+    "location": {  
+        "type": "Polygon",  
+        "coordinates": [  
+            [  
+                [  
+                    100,  
+                    0  
+                ],  
+                [  
+                    101,  
+                    0  
+                ],  
+                [  
+                    101,  
+                    1  
+                ],  
+                [  
+                    100,  
+                    1  
+                ],  
+                [  
+                    100,  
+                    0  
+                ]  
+            ]  
+        ]  
+    }  
+}  
+```  
 #### ConsumoPoint NGSI-v2 normalizado Ejemplo  
 Aquí hay un ejemplo de un ConsumptionPoint en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+```json  
+{  
+  "id": "did:consumpoint:EN04",  
+  "type": "ConsumptionPoint",  
+  "consumptionPointCategory": {  
+    "type": "Array",  
+    "value": [  
+      "building"  
+    ]  
+  },  
+  "name": {  
+    "type": "Text",  
+    "value": "CEIP JOAN MARAGALL"  
+  },  
+  "alternateName": {  
+    "type": "Text",  
+    "value": "Centre d'educació infantil iprimaria Joan Maragall"  
+  },  
+  "address": {  
+    "type": "StructuredValue",  
+    "values": {  
+      "addressCountry": "ES",  
+      "streetAddress": "Passeig del Pintor Sert, 1-9",  
+      "addressLocality": "La Llagosta, Barcelona",  
+      "postalCode": "08120"  
+    }  
+  },  
+  "code": {  
+    "type": "Text",  
+    "value": "EN04"  
+  },  
+  "dateCreated": {  
+    "type": "DateTime",  
+    "value": "2016-08-08T10:18:16Z"  
+  },  
+  "dateModified": {  
+    "type": "DateTime",  
+    "value": "2016-08-08T10:18:16Z"  
+  },  
+  "description": {  
+    "type": "Text",  
+    "value": "Edifici pertanyent al centre educatiu"  
+  },  
+  "location": {  
+    "type": "geo:json",  
+    "value": {  
+      "type": "Polygon",  
+      "coordinates": [  
+        [  
+          [  
+            100,  
+            0  
+          ],  
+          [  
+            101,  
+            0  
+          ],  
+          [  
+            101,  
+            1  
+          ],  
+          [  
+            100,  
+            1  
+          ],  
+          [  
+            100,  
+            0  
+          ]  
+        ]  
+      ]  
+    }  
+  }  
+}  
+```  
 #### Consumo de valores clave NGSI-LD Ejemplo  
 Aquí hay un ejemplo de un ConsumptionPoint en formato JSON-LD como key-values. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+```json  
+{  
+  "id": "did:consumpoint:EN04",  
+  "type": "ConsumptionPoint",  
+  "consumptionPointCategory": [  
+    "building"  
+  ],  
+  "name": "CEIP JOAN MARAGALL",  
+  "alternateName": "Centre d'educaciÃ³ infantil iprimaria Joan Maragall",  
+  "address": {  
+    "addressCountry": "ES",  
+    "streetAddress": "Passeig del Pintor Sert, 1-9",  
+    "addressLocality": "La Llagosta, Barcelona",  
+    "postalCode": "08120"  
+  },  
+  "code": "EN04",  
+  "dateCreated": "2016-08-08T10:18:16Z",  
+  "dateModified": "2016-08-08T10:18:16Z",  
+  "description": "Edifici pertanyent al centre educatiu",  
+  "location": {  
+    "type": "Polygon",  
+    "coordinates": [  
+      [  
+        [  
+          100,  
+          0  
+        ],  
+        [  
+          101,  
+          0  
+        ],  
+        [  
+          101,  
+          1  
+        ],  
+        [  
+          100,  
+          1  
+        ],  
+        [  
+          100,  
+          0  
+        ]  
+      ]  
+    ]  
+  },  
+  "@context": [  
+    "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld"  
+  ]  
+}  
+```  
 #### ConsumoPoint NGSI-LD normalizado Ejemplo  
 He aquí un ejemplo de un ConsumptionPoint en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+```json  
+{  
+    "id": "did:consumpoint:EN04",  
+    "type": "ConsumptionPoint",  
+    "consumptionPointCategory": {  
+        "type": "Property",  
+        "value": [  
+            "building"  
+        ]  
+    },  
+    "name": {  
+        "type": "Property",  
+        "value": "CEIP JOAN MARAGALL"  
+    },  
+    "alternateName": {  
+        "type": "Property",  
+        "value": "Centre d'educaciÃ³ infantil iprimaria Joan Maragall"  
+    },  
+    "address": {  
+        "type": "Property",  
+        "values": {  
+             "addressCountry": "ES",  
+        "streetAddress": "Passeig del Pintor Sert, 1-9",  
+        "addressLocality": "La Llagosta, Barcelona",  
+        "postalCode": "08120"  
+        }  
+    },  
+    "code": {  
+        "type": "Property",  
+        "value": "EN04"  
+    },  
+    "dateCreated": {  
+        "type": "Property",  
+        "value": "2016-08-08T10:18:16Z"  
+    },  
+    "dateModified": {  
+        "type": "Property",  
+        "value": "2016-08-08T10:18:16Z"  
+    },  
+    "description": {  
+        "type": "Property",  
+        "value": "Edifici pertanyent al centre educatiu"  
+    },  
+    "location": {  
+        "type": "Geoproperty",  
+        "value": {  
+            "type": "Polygon",  
+            "coordinates": [  
+                [  
+                    [  
+                        100,  
+                        0  
+                    ],  
+                    [  
+                        101,  
+                        0  
+                    ],  
+                    [  
+                        101,  
+                        1  
+                    ],  
+                    [  
+                        100,  
+                        1  
+                    ],  
+                    [  
+                        100,  
+                        0  
+                    ]  
+                ]  
+            ]  
+        }  
+    },  
+    "@context": [  
+        "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld"  
+    ]  
+}  
+```  
 Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud  
