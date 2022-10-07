@@ -13,15 +13,15 @@
     },
     "alternateName": {
         "type": "Property",
-        "value": "Centre d'educació infantil iprimaria Joan Maragall"
+        "value": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall"
     },
     "address": {
         "type": "Property",
         "values": {
-             "addressCountry": "ES",
-        "streetAddress": "Passeig del Pintor Sert, 1-9",
-        "addressLocality": "La Llagosta, Barcelona",
-        "postalCode": "08120"
+            "addressCountry": "ES",
+            "streetAddress": "Passeig del Pintor Sert, 1-9",
+            "addressLocality": "La Llagosta, Barcelona",
+            "postalCode": "08120"
         }
     },
     "code": {
@@ -71,6 +71,7 @@
         }
     },
     "@context": [
-        "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld"
+        "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"
     ]
 }
