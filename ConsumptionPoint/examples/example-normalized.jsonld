@@ -41,7 +41,7 @@
         "value": "Edifici pertanyent al centre educatiu"
     },
     "location": {
-        "type": "Geoproperty",
+        "type": "GeoProperty",
         "value": {
             "type": "Polygon",
             "coordinates": [
