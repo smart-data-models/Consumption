@@ -1,5 +1,7 @@
 {
     "@context": {
+        "ConsumptionCost": "https://smartdatamodels.org/dataModel.Consumption/ConsumptionCost",
+        "ConsumptionPoint": "https://smartdatamodels.org/dataModel.Consumption/ConsumptionPoint",
         "address": "https://smartdatamodels.org/address",
         "alternateName": "https://smartdatamodels.org/alternateName",
         "areaServed": "https://smartdatamodels.org/areaServed",
