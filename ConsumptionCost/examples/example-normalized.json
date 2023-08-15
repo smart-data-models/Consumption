@@ -11,9 +11,7 @@
   },
   "consumptionPoint": {
     "type": "Relationship",
-    "value":
-      "did:consumpoint:EN04"
-
+    "value": "did:consumpoint:EN04"
   },
   "energyConsumedAndCost": [
     {
@@ -44,7 +42,7 @@
             }
           }
         },
-        "energyAmount": {
+        "totalCost": {
           "type": "StructuredValue",
           "value": {
             "currency": {
