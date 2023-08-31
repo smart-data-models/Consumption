@@ -52,11 +52,11 @@
                     "items": [
                         {
                             "type": "object",
-                            "description": "Property. Entity with the energy consumed and its cost by type of energy.",
+                            "description": "Property. Entity with the energy consumed and its cost by type of energy",
                             "properties": {
                                 "id": {
                                     "type": "string",
-                                    "description": "Property. Identifier of consumption lecture entity. For example, CUPS in Spain.",
+                                    "description": "Property. Identifier of consumption lecture entity. For example, CUPS in Spain",
                                     "items": {
                                         "oneOf": [
                                             {
@@ -71,15 +71,15 @@
                                 },
                                 "energyType": {
                                     "type": "string",
-                                    "description": "Property. Type of energy."
+                                    "description": "Property. Type of energy"
                                 },
                                 "supplyName": {
                                     "type": "string",
-                                    "description": "Property. Name of the supply company."
+                                    "description": "Property. Name of the supply company"
                                 },
                                 "energyConsumed": {
                                     "type": "object",
-                                    "description": "Property. Amount of energy consumed.",
+                                    "description": "Property. Amount of energy consumed",
                                     "properties": {
                                         "measurementUnit": {
                                             "description": "Property. Measurement unit used. Units:'[MTQ, KWH]'. Official list at https://unece.org/trade/documents/2021/06/uncefact-rec20",
@@ -100,13 +100,13 @@
                                         },
                                         "value": {
                                             "type": "number",
-                                            "description": "Property. Value of the amount of the energy consumed."
+                                            "description": "Property. Value of the amount of the energy consumed"
                                         }
                                     }
                                 },
                                 "totalCost": {
                                     "type": "object",
-                                    "description": "Property. Amount of cost by energy consumed.",
+                                    "description": "Property. Amount of cost by energy consumed",
                                     "properties": {
                                         "currency": {
                                             "type": "string",
@@ -120,7 +120,7 @@
                                         },
                                         "value": {
                                             "type": "number",
-                                            "description": "Property. Value of the amount of the cost for energy consumed."
+                                            "description": "Property. Value of the amount of the cost for energy consumed"
                                         }
                                     }
                                 }
