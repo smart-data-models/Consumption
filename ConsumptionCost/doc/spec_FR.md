@@ -7,170 +7,258 @@
 [document généré automatiquement] (https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-Description globale : **Information sur l'énergie consommée et son coût par point de consommation**.  
+Description globale : **Information sur l'énergie consommée et son coût par point de consommation**  
 version : 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
 ## Liste des propriétés  
 
-<sup><sub>[*] S'il n'y a pas de type dans un attribut, c'est parce qu'il pourrait avoir plusieurs types ou différents formats/modèles</sub></sup>.  
-- `address[object]`: L'adresse postale  . Model: [https://schema.org/address](https://schema.org/address)- `alternateName[string]`: Un nom alternatif pour cet élément  - `areaServed[string]`: La zone géographique où un service ou un article offert est fourni  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPoint[*]`: Identifiant du point de consommation auquel l'entité se réfère.  - `dataProvider[string]`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées.  - `dateCreated[string]`: Horodatage de la création de l'entité. Celui-ci sera généralement attribué par la plateforme de stockage.  - `dateModified[string]`: Horodatage de la dernière modification de l'entité. Il sera généralement attribué par la plateforme de stockage.  - `description[string]`: Une description de cet article  - `energyConsumedAndCost[array]`: Tableau avec la consommation d'énergie et le coût par type d'énergie.  - `id[*]`: Identifiant unique de l'entité  - `location[*]`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une ligne, d'un polygone, d'un point multiple, d'une ligne multiple ou d'un polygone multiple.  - `month[string]`: Le mois auquel l'entité se réfère. Format MM, ex : "07  - `name[string]`: Le nom de cet élément.  - `owner[array]`: Une liste contenant une séquence de caractères codée en JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso[*]`: liste d'uri pointant vers des ressources supplémentaires sur l'article  - `source[string]`: Une séquence de caractères donnant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine entièrement qualifié du fournisseur source ou l'URL de l'objet source.  - `type[string]`: Type d'entité NGSI. Il doit s'agir de ConsumptionCost.  - `year[string]`: L'année à laquelle l'entité se réfère. Format YYYY, ex : "2022  <!-- /30-PropertiesList -->  
+<sup><sub>[*] S'il n'y a pas de type dans un attribut, c'est parce qu'il peut avoir plusieurs types ou différents formats/modèles</sub></sup>.  
+- `address[object]`: L'adresse postale  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: Le pays. Par exemple, l'Espagne  . Model: [https://schema.org/addressCountry](https://schema.org/addressCountry)  
+	- `addressLocality[string]`: La localité dans laquelle se trouve l'adresse postale et qui se trouve dans la région  . Model: [https://schema.org/addressLocality](https://schema.org/addressLocality)  
+	- `addressRegion[string]`: La région dans laquelle se trouve la localité et qui se trouve dans le pays  . Model: [https://schema.org/addressRegion](https://schema.org/addressRegion)  
+	- `district[string]`: Un district est un type de division administrative qui, dans certains pays, est géré par le gouvernement local.    
+	- `postOfficeBoxNumber[string]`: Le numéro de la boîte postale pour les adresses de boîtes postales. Par exemple, 03578  . Model: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber)  
+	- `postalCode[string]`: Le code postal. Par exemple, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
+	- `streetAddress[string]`: L'adresse de la rue  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
+- `alternateName[string]`: Un nom alternatif pour ce poste  - `areaServed[string]`: La zone géographique où un service ou un article est offert  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPoint[*]`: Identifiant du point de consommation auquel l'entité se réfère  - `dataProvider[string]`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées  - `dateCreated[date-time]`: Horodatage de la création de l'entité. Celle-ci est généralement attribuée par la plate-forme de stockage  - `dateModified[date-time]`: Date de la dernière modification de l'entité. Cette date est généralement attribuée par la plate-forme de stockage  - `description[string]`: Une description de l'article  - `energyConsumedAndCost[array]`: Tableau avec consommation d'énergie et coût par type d'énergie  - `id[*]`: Identifiant unique de l'entité  - `location[*]`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une chaîne de ligne, d'un polygone, d'un point multiple, d'une chaîne de ligne multiple ou d'un polygone multiple.  - `month[string]`: Le mois auquel l'entité se réfère. Format MM, ex : '07'  - `name[string]`: Le nom de cet élément  - `owner[array]`: Une liste contenant une séquence de caractères encodés JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso[*]`: liste d'uri pointant vers des ressources supplémentaires concernant l'élément  - `source[string]`: Séquence de caractères indiquant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source ou l'URL de l'objet source.  - `type[string]`: Type d'entité NGSI. Il doit s'agir de ConsumptionCost  - `year[string]`: L'année à laquelle l'entité se réfère. Format YYYY, ex : '2022'  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Propriétés requises  
 - `consumptionPoint`  - `energyConsumedAndCost`  - `id`  - `type`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
-## Description des propriétés du modèle de données  
+## Modèle de données description des propriétés  
 Classés par ordre alphabétique (cliquez pour plus de détails)  
 <!-- /50-DataModelHeader -->  
 <!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 ConsumptionCost:    
-  description: 'Information of energy consumed and its cost by consumption point'    
+  description: Information of energy consumed and its cost by consumption point    
   properties:    
     address:    
-      description: 'The mailing address'    
+      description: The mailing address    
       properties:    
         addressCountry:    
-          description: 'Property. The country. For example, Spain. Model:''https://schema.org/addressCountry'''    
+          description: 'The country. For example, Spain'    
           type: string    
+          x-ngsi:    
+            model: https://schema.org/addressCountry    
+            type: Property    
         addressLocality:    
-          description: 'Property. The locality in which the street address is, and which is in the region. Model:''https://schema.org/addressLocality'''    
+          description: 'The locality in which the street address is, and which is in the region'    
           type: string    
+          x-ngsi:    
+            model: https://schema.org/addressLocality    
+            type: Property    
         addressRegion:    
-          description: 'Property. The region in which the locality is, and which is in the country. Model:''https://schema.org/addressRegion'''    
+          description: 'The region in which the locality is, and which is in the country'    
           type: string    
+          x-ngsi:    
+            model: https://schema.org/addressRegion    
+            type: Property    
+        district:    
+          description: 'A district is a type of administrative division that, in some countries, is managed by the local government'    
+          type: string    
+          x-ngsi:    
+            type: Property    
         postOfficeBoxNumber:    
-          description: 'Property. The post office box number for PO box addresses. For example, 03578. Model:''https://schema.org/postOfficeBoxNumber'''    
+          description: 'The post office box number for PO box addresses. For example, 03578'    
           type: string    
+          x-ngsi:    
+            model: https://schema.org/postOfficeBoxNumber    
+            type: Property    
         postalCode:    
-          description: 'Property. The postal code. For example, 24004. Model:''https://schema.org/https://schema.org/postalCode'''    
+          description: 'The postal code. For example, 24004'    
           type: string    
+          x-ngsi:    
+            model: https://schema.org/https://schema.org/postalCode    
+            type: Property    
         streetAddress:    
-          description: 'Property. The street address. Model:''https://schema.org/streetAddress'''    
+          description: The street address    
           type: string    
+          x-ngsi:    
+            model: https://schema.org/streetAddress    
+            type: Property    
+        streetNr:    
+          description: Number identifying a specific property on a public street    
+          type: string    
+          x-ngsi:    
+            type: Property    
       type: object    
       x-ngsi:    
         model: https://schema.org/address    
         type: Property    
     alternateName:    
-      description: 'An alternative name for this item'    
+      description: An alternative name for this item    
       type: string    
       x-ngsi:    
         type: Property    
     areaServed:    
-      description: 'The geographic area where a service or offered item is provided'    
+      description: The geographic area where a service or offered item is provided    
       type: string    
       x-ngsi:    
         model: https://schema.org/Text    
         type: Property    
     consumptionPoint:    
-      description: 'Consumption point identifier which to entity refers.'    
+      description: Consumption point identifier which to entity refers    
       oneOf:    
         - format: uuid    
           type: string    
-        - anyOf: &anyof    
-            - description: 'Property. Identifier format of any NGSI entity'    
+        - anyOf:    
+            - description: Identifier format of any NGSI entity    
               maxLength: 256    
               minLength: 1    
               pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
               type: string    
-            - description: 'Property. Identifier format of any NGSI entity'    
+              x-ngsi:    
+                type: Property    
+            - description: Identifier format of any NGSI entity    
               format: uri    
               type: string    
-          description: 'Property. Unique identifier of the entity'    
+              x-ngsi:    
+                type: Property    
+          description: Unique identifier of the entity    
+          x-ngsi:    
+            type: Property    
       x-ngsi:    
         type: Relationship    
     dataProvider:    
-      description: 'A sequence of characters identifying the provider of the harmonised data entity.'    
+      description: A sequence of characters identifying the provider of the harmonised data entity    
       type: string    
       x-ngsi:    
         type: Property    
     dateCreated:    
-      description: 'Entity creation timestamp. This will usually be allocated by the storage platform.'    
+      description: Entity creation timestamp. This will usually be allocated by the storage platform    
       format: date-time    
       type: string    
       x-ngsi:    
         type: Property    
     dateModified:    
-      description: 'Timestamp of the last modification of the entity. This will usually be allocated by the storage platform.'    
+      description: Timestamp of the last modification of the entity. This will usually be allocated by the storage platform    
       format: date-time    
       type: string    
       x-ngsi:    
         type: Property    
     description:    
-      description: 'A description of this item'    
+      description: A description of this item    
       type: string    
       x-ngsi:    
         type: Property    
     energyConsumedAndCost:    
-      description: 'Array with energy consumption and cost by type of energy.'    
+      description: Array with energy consumption and cost by type of energy    
       items:    
-        - description: 'Property. Entity with the energy consumed and its cost by type of energy.'    
-          properties:    
-            energyConsumed:    
-              description: 'Property. Amount of energy consumed.'    
-              properties:    
-                measurementUnit:    
-                  description: 'Property. Measurement unit used. Units:''[MTQ, KWH]''. Official list at https://unece.org/trade/documents/2021/06/uncefact-rec20'    
-                  oneOf:    
-                    - enum:    
-                        - MTQ    
-                      type: string    
-                    - enum:    
-                        - KWH    
-                      type: string    
-                value:    
-                  description: 'Property. Value of the amount of the energy consumed.'    
-                  type: number    
-              type: object    
-            energyType:    
-              description: 'Property. Type of energy.'    
-              type: string    
-            id:    
-              description: 'Property. Identifier of consumption lecture entity. For example, CUPS in Spain.'    
-              items:    
+        description: Entity with the energy consumed and its cost by type of energy    
+        properties:    
+          energyConsumed:    
+            description: Amount of energy consumed    
+            properties:    
+              measurementUnit:    
+                description: 'Measurement unit used. Official list at https://unece.org/trade/documents/2021/06/uncefact-rec20'    
                 oneOf:    
-                  - format: uri    
+                  - enum:    
+                      - MTQ    
                     type: string    
-                  - anyOf: *anyof    
-                    description: 'Property. Unique identifier of the entity'    
-              type: string    
-            supplyName:    
-              description: 'Property. Name of the supply company.'    
-              type: string    
-            totalCost:    
-              description: 'Property. Amount of cost by energy consumed.'    
-              properties:    
-                currency:    
-                  description: 'Property. Currency names in ISO-4217 format. Enum:''[EUR, USD, GPD, JPY]''. Official list https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list_one.xls'    
-                  enum:    
-                    - EUR    
-                    - GPD    
-                    - JPY    
-                    - USD    
+                  - enum:    
+                      - KWH    
+                    type: string    
+                x-ngsi:    
+                  type: Property    
+                  units: "[MTQ, KWH]"    
+              value:    
+                description: Value of the amount of the energy consumed    
+                type: number    
+                x-ngsi:    
+                  type: Property    
+            type: object    
+            x-ngsi:    
+              type: Property    
+          energyType:    
+            description: Type of energy    
+            type: string    
+            x-ngsi:    
+              type: Property    
+          id:    
+            description: 'Identifier of consumption lecture entity. For example, CUPS in Spain'    
+            items:    
+              oneOf:    
+                - format: uri    
                   type: string    
-                value:    
-                  description: 'Property. Value of the amount of the cost for energy consumed.'    
-                  type: number    
-              type: object    
-          type: object    
+                - anyOf:    
+                    - description: Identifier format of any NGSI entity    
+                      maxLength: 256    
+                      minLength: 1    
+                      pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+                      type: string    
+                      x-ngsi:    
+                        type: Property    
+                    - description: Identifier format of any NGSI entity    
+                      format: uri    
+                      type: string    
+                      x-ngsi:    
+                        type: Property    
+                  description: Unique identifier of the entity    
+                  x-ngsi:    
+                    type: Property    
+            type: string    
+            x-ngsi:    
+              type: Property    
+          supplyName:    
+            description: Name of the supply company    
+            type: string    
+            x-ngsi:    
+              type: Property    
+          totalCost:    
+            description: Amount of cost by energy consumed    
+            properties:    
+              currency:    
+                description: 'Currency names in ISO-4217 format. Enum:''[EUR, USD, GPD, JPY]''. Official list https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list_one.xls'    
+                enum:    
+                  - EUR    
+                  - GPD    
+                  - JPY    
+                  - USD    
+                type: string    
+                x-ngsi:    
+                  type: Property    
+              value:    
+                description: Value of the amount of the cost for energy consumed    
+                type: number    
+                x-ngsi:    
+                  type: Property    
+            type: object    
+            x-ngsi:    
+              type: Property    
+        type: object    
+        x-ngsi:    
+          type: Property    
       minItems: 1    
       type: array    
       x-ngsi:    
         type: Property    
     id:    
-      anyOf: *anyof    
-      description: 'Unique identifier of the entity'    
+      anyOf:    
+        - description: Identifier format of any NGSI entity    
+          maxLength: 256    
+          minLength: 1    
+          pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+          type: string    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
+          format: uri    
+          type: string    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     location:    
       description: 'Geojson reference to the item. It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon'    
       oneOf:    
-        - description: 'GeoProperty. Geojson reference to the item. Point'    
+        - description: Geojson reference to the item. Point    
           properties:    
             bbox:    
               items:    
@@ -189,9 +277,11 @@ ConsumptionCost:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON Point'    
+          title: GeoJSON Point    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. LineString'    
+          x-ngsi:    
+            type: GeoProperty    
+        - description: Geojson reference to the item. LineString    
           properties:    
             bbox:    
               items:    
@@ -213,9 +303,11 @@ ConsumptionCost:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON LineString'    
+          title: GeoJSON LineString    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. Polygon'    
+          x-ngsi:    
+            type: GeoProperty    
+        - description: Geojson reference to the item. Polygon    
           properties:    
             bbox:    
               items:    
@@ -239,9 +331,11 @@ ConsumptionCost:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON Polygon'    
+          title: GeoJSON Polygon    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. MultiPoint'    
+          x-ngsi:    
+            type: GeoProperty    
+        - description: Geojson reference to the item. MultiPoint    
           properties:    
             bbox:    
               items:    
@@ -262,9 +356,11 @@ ConsumptionCost:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON MultiPoint'    
+          title: GeoJSON MultiPoint    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. MultiLineString'    
+          x-ngsi:    
+            type: GeoProperty    
+        - description: Geojson reference to the item. MultiLineString    
           properties:    
             bbox:    
               items:    
@@ -288,9 +384,11 @@ ConsumptionCost:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON MultiLineString'    
+          title: GeoJSON MultiLineString    
           type: object    
-        - description: 'GeoProperty. Geojson reference to the item. MultiLineString'    
+          x-ngsi:    
+            type: GeoProperty    
+        - description: Geojson reference to the item. MultiLineString    
           properties:    
             bbox:    
               items:    
@@ -316,8 +414,10 @@ ConsumptionCost:
           required:    
             - type    
             - coordinates    
-          title: 'GeoJSON MultiPolygon'    
+          title: GeoJSON MultiPolygon    
           type: object    
+          x-ngsi:    
+            type: GeoProperty    
       x-ngsi:    
         type: GeoProperty    
     month:    
@@ -327,20 +427,34 @@ ConsumptionCost:
       x-ngsi:    
         type: Property    
     name:    
-      description: 'The name of this item.'    
+      description: The name of this item    
       type: string    
       x-ngsi:    
         type: Property    
     owner:    
-      description: 'A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)'    
+      description: A List containing a JSON encoded sequence of characters referencing the unique Ids of the owner(s)    
       items:    
-        anyOf: *anyof    
-        description: 'Property. Unique identifier of the entity'    
+        anyOf:    
+          - description: Identifier format of any NGSI entity    
+            maxLength: 256    
+            minLength: 1    
+            pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
+            type: string    
+            x-ngsi:    
+              type: Property    
+          - description: Identifier format of any NGSI entity    
+            format: uri    
+            type: string    
+            x-ngsi:    
+              type: Property    
+        description: Unique identifier of the entity    
+        x-ngsi:    
+          type: Property    
       type: array    
       x-ngsi:    
         type: Property    
     seeAlso:    
-      description: 'list of uri pointing to additional resources about the item'    
+      description: list of uri pointing to additional resources about the item    
       oneOf:    
         - items:    
             format: uri    
@@ -352,12 +466,12 @@ ConsumptionCost:
       x-ngsi:    
         type: Property    
     source:    
-      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object.'    
+      description: 'A sequence of characters giving the original source of the entity data as a URL. Recommended to be the fully qualified domain name of the source provider, or the URL to the source object'    
       type: string    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be ConsumptionCost.'    
+      description: NGSI entity type. It has to be ConsumptionCost    
       enum:    
         - ConsumptionCost    
       type: string    
@@ -388,63 +502,62 @@ ConsumptionCost:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## Exemples de charges utiles  
-#### ConsommationCoût Valeurs-clés NGSI-v2 Exemple  
-Voici un exemple de ConsumptionCost au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-v2 lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
+#### ConsommationCoût Valeurs clés de l'INSIG-v2 Exemple  
+Voici un exemple de coût de consommation au format JSON-LD sous forme de valeurs clés. Ceci est compatible avec NGSI-v2 lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
-    "id": "did:enerconsumcost:2022-07-3325",  
-    "type": "ConsumptionCost",  
-    "year": "2022",  
-    "month": "07",  
-    "consumptionPoint":  
-        "did:consumpoint:EN04"  
-    ,  
-    "energyConsumedAndCost": [{  
-            "id": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX",  
-            "energyType": "electricity",  
-            "supplyName": "Electric Company, S.A.",  
-            "energyConsumed": {  
-                "measurementUnit": "KWH",  
-                "value": 800.00  
-            },  
-            "energyAmount": {  
-                "currency": "EUR",  
-                "value": 374.00  
-            }  
-        },  
-        {  
-            "id": "did:ener:gas:ESXXXXXXXXXXXXXXXXXXXX",  
-            "type": "gas",  
-            "supplyName": "Gas Company, S.A.",  
-            "consumption": {  
-                "measurementUnit": "MTQ",  
-                "value": 35.00  
-            },  
-            "amount": {  
-                "currency": "EUR",  
-                "value": 250.32  
-            }  
-        },  
-        {  
-            "id": "did:ener:wat:02060767",  
-            "type": "water",  
-            "supplyName": "Water Company",  
-            "consumption": {  
-                "measurementUnit": "MTQ",  
-                "value": 33.00  
-            },  
-            "amount": {  
-                "currency": "EUR",  
-                "value": 110.34  
-            }  
-        }  
-    ]  
+  "id": "did:enerconsumcost:2022-07-3325",  
+  "type": "ConsumptionCost",  
+  "year": "2022",  
+  "month": "07",  
+  "consumptionPoint":"did:consumpoint:EN04",  
+  "energyConsumedAndCost": [  
+    {  
+      "id": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX",  
+      "energyType": "electricity",  
+      "supplyName": "Electric Company, S.A.",  
+      "energyConsumed": {  
+        "measurementUnit": "KWH",  
+        "value": 800.00  
+      },  
+      "totalCost": {  
+        "currency": "EUR",  
+        "value": 374.00  
+      }  
+    },  
+    {  
+      "id": "did:ener:gas:ESXXXXXXXXXXXXXXXXXXXX",  
+      "energyType": "gas",  
+      "supplyName": "Gas Company, S.A.",  
+      "energyConsumed": {  
+        "measurementUnit": "MTQ",  
+        "value": 35.00  
+      },  
+      "totalCost": {  
+        "currency": "EUR",  
+        "value": 250.32  
+      }  
+    },  
+    {  
+      "id": "did:ener:wat:02060767",  
+      "energyType": "water",  
+      "supplyName": "Water Company",  
+      "energyConsumed": {  
+        "measurementUnit": "MTQ",  
+        "value": 33.00  
+      },  
+      "totalCost": {  
+        "currency": "EUR",  
+        "value": 110.34  
+      }  
+    }  
+  ]  
 }  
 ```  
 </details>  
-#### Coût de consommation NGSI-v2 normalisé Exemple  
-Voici un exemple d'un ConsumptionCost au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-v2 lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
+#### ConsommationCoût INSIG-v2 normalisée Exemple  
+Voici un exemple de coût de consommation au format JSON-LD tel qu'il a été normalisé. Ce format est compatible avec les NGSI-v2 lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -460,8 +573,7 @@ ConsumptionCost:
   },  
   "consumptionPoint": {  
     "type": "Relationship",  
-    "value":  
-      "did:consumpoint:EN04"  
+    "value": "did:consumpoint:EN04"  
   },  
   "energyConsumedAndCost": [  
     {  
@@ -492,7 +604,7 @@ ConsumptionCost:
             }  
           }  
         },  
-        "energyAmount": {  
+        "totalCost": {  
           "type": "StructuredValue",  
           "value": {  
             "currency": {  
@@ -511,124 +623,139 @@ ConsumptionCost:
 }  
 ```  
 </details>  
-#### ConsommationCoût Valeurs-clés NGSI-LD Exemple  
-Voici un exemple de ConsumptionCost au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-LD lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
+#### ConsumptionCost Valeurs clés de l'INS-LD Exemple  
+Voici un exemple de coût de consommation au format JSON-LD sous forme de valeurs clés. Ce format est compatible avec NGSI-LD lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
-    "id": "did:enerconsumcost:2022-07-3325",  
-    "type": "ConsumptionCost",  
-    "year": "2022",  
-    "month": "07",  
-    "consumptionPoint": "did:consumpoint:EN04",  
-    "energyConsumedAndCost": [  
-        {  
-            "id": {  
-                "type": "Property",  
-                "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"  
-            },  
-            "energyType": {  
-                "type": "Property",  
-                "value": "electricity"  
-            },  
-            "supplyName": {  
-                "type": "Property",  
-                "value": "Electric Company, S.A."  
-            },  
-            "energyConsumed": {  
-                "measurementUnit": "KWH",  
-                "value": 800.0  
-            },  
-            "energyAmount": {  
-                "currency": "EUR",  
-                "value": 374.0  
-            }  
-        }  
-    ],  
-    "@context": [  
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/context.jsonld",  
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"  
-    ]  
+  "id": "did:enerconsumcost:2022-07-3325",  
+  "type": "ConsumptionCost",  
+  "year": "2022",  
+  "month": "07",  
+  "consumptionPoint":"did:consumpoint:EN04",  
+  "energyConsumedAndCost": [  
+    {  
+      "id": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX",  
+      "energyType": "electricity",  
+      "supplyName": "Electric Company, S.A.",  
+      "energyConsumed": {  
+        "measurementUnit": "KWH",  
+        "value": 800.00  
+      },  
+      "totalCost": {  
+        "currency": "EUR",  
+        "value": 374.00  
+      }  
+    },  
+    {  
+      "id": "did:ener:gas:ESXXXXXXXXXXXXXXXXXXXX",  
+      "energyType": "gas",  
+      "supplyName": "Gas Company, S.A.",  
+      "energyConsumed": {  
+        "measurementUnit": "MTQ",  
+        "value": 35.00  
+      },  
+      "totalCost": {  
+        "currency": "EUR",  
+        "value": 250.32  
+      }  
+    },  
+    {  
+      "id": "did:ener:wat:02060767",  
+      "energyType": "water",  
+      "supplyName": "Water Company",  
+      "energyConsumed": {  
+        "measurementUnit": "MTQ",  
+        "value": 33.00  
+      },  
+      "totalCost": {  
+        "currency": "EUR",  
+        "value": 110.34  
+      }  
+    }  
+  ],  
+  "@context": [  
+      "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+      "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"  
+  ]  
 }  
 ```  
 </details>  
 #### Coût de consommation NGSI-LD normalisé Exemple  
-Voici un exemple d'un ConsumptionCost au format JSON-LD tel que normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
+Voici un exemple de coût de consommation au format JSON-LD tel qu'il a été normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
-    "id": "did:enerconsumcost:2022-07-3325",  
-    "type": "ConsumptionCost",  
-    "year": {  
-        "type": "Property",  
-        "value": "2022"  
-    },  
-    "month": {  
-        "type": "Property",  
-        "value": "07"  
-    },  
-    "consumptionPoint": {  
-        "type": "Relationship",  
-        "object": "did:consumpoint:EN04"  
-    },  
-    "energyConsumedAndCost": [  
-        {  
-            "type": "Property",  
+  "id": "did:enerconsumcost:2022-07-3325",  
+  "type": "ConsumptionCost",  
+  "year": {  
+    "type": "Text",  
+    "value": "2022"  
+  },  
+  "month": {  
+    "type": "Text",  
+    "value": "07"  
+  },  
+  "consumptionPoint": {  
+    "type": "Relationship",  
+    "value": "did:consumpoint:EN04"  
+  },  
+  "energyConsumedAndCost": [  
+    {  
+      "type": "StructuredValue",  
+      "value": {  
+        "id": {  
+          "type": "Text",  
+          "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"  
+        },  
+        "energyType": {  
+          "type": "Text",  
+          "value": "electricity"  
+        },  
+        "supplyName": {  
+          "type": "Text",  
+          "value": "Electric Company, S.A."  
+        },  
+        "energyConsumed": {  
+          "type": "StructuredValue",  
+          "value": {  
+            "measurementUnit": {  
+              "type": "Text",  
+              "value": "KWH"  
+            },  
             "value": {  
-                "id": {  
-                    "type": "Property",  
-                    "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"  
-                },  
-                "energyType": {  
-                    "type": "Property",  
-                    "value": "electricity"  
-                },  
-                "supplyName": {  
-                    "type": "Property",  
-                    "value": "Electric Company, S.A."  
-                },  
-                "energyConsumed": {  
-                    "type": "Property",  
-                    "value": {  
-                        "measurementUnit": {  
-                            "type": "Property",  
-                            "value": "KWH"  
-                        },  
-                        "value": {  
-                            "type": "Property",  
-                            "value": 800.0  
-                        }  
-                    }  
-                },  
-                "energyAmount": {  
-                    "type": "Property",  
-                    "value": {  
-                        "currency": {  
-                            "type": "Text",  
-                            "value": "EUR"  
-                        },  
-                        "value": {  
-                            "type": "Number",  
-                            "value": 374.0  
-                        }  
-                    }  
-                }  
+              "type": "Number",  
+              "value": 800.00  
             }  
+          }  
+        },  
+        "totalCost": {  
+          "type": "StructuredValue",  
+          "value": {  
+            "currency": {  
+              "type": "Text",  
+              "value": "EUR"  
+            },  
+            "value": {  
+              "type": "Number",  
+              "value": 374.00  
+            }  
+          }  
         }  
-    ],  
-    "@context": [  
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/context.jsonld",  
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"  
-    ]  
+      }  
+    }  
+  ],  
+  "@context": [  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"  
+  ]  
 }  
 ```  
 </details><!-- /80-Examples -->  
 <!-- 90-FooterNotes -->  
 <!-- /90-FooterNotes -->  
 <!-- 95-Units -->  
-Voir [FAQ 10](https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse sur la façon de traiter les unités de magnitude.  
+Voir [FAQ 10] (https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse à la question de savoir comment traiter les unités de magnitude.  
 <!-- /95-Units -->  
 <!-- 97-LastFooter -->  
 ---  
