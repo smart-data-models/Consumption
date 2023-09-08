@@ -8,16 +8,28 @@
         "addressRegion": "https://smartdatamodels.org/addressRegion",
         "alternateName": "https://smartdatamodels.org/alternateName",
         "areaServed": "https://smartdatamodels.org/areaServed",
+        "bbox": {
+            "@container": "@list",
+            "@id": "geojson:bbox"
+        },
         "consumptionPoint": "https://smartdatamodels.org/dataModel.Consumption/consumptionPoint",
         "consumptionPointCategory": "https://smartdatamodels.org/dataModel.Consumption/consumptionPointCategory",
+        "coordinates": {
+            "@container": "@list",
+            "@id": "geojson:coordinates"
+        },
+        "currency": "https://smartdatamodels.org/dataModel.Consumption/currency",
         "dataProvider": "https://smartdatamodels.org/dataProvider",
         "dateCreated": "https://smartdatamodels.org/dateCreated",
         "dateModified": "https://smartdatamodels.org/dateModified",
         "description": "http://purl.org/dc/terms/description",
         "district": "https://smartdatamodels.org/district",
+        "energyConsumed": "https://smartdatamodels.org/dataModel.Consumption/energyConsumed",
         "energyConsumedAndCost": "https://smartdatamodels.org/dataModel.Consumption/energyConsumedAndCost",
+        "energyType": "https://smartdatamodels.org/dataModel.Consumption/energyType",
         "id": "@id",
         "location": "ngsi-ld:location",
+        "measurementUnit": "https://smartdatamodels.org/dataModel.Consumption/measurementUnit",
         "month": "https://smartdatamodels.org/dataModel.Consumption/month",
         "name": "https://smartdatamodels.org/name",
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
@@ -28,7 +40,10 @@
         "source": "https://smartdatamodels.org/source",
         "streetAddress": "https://smartdatamodels.org/streetAddress",
         "streetNr": "https://smartdatamodels.org/streetNr",
+        "supplyName": "https://smartdatamodels.org/dataModel.Consumption/supplyName",
+        "totalCost": "https://smartdatamodels.org/dataModel.Consumption/totalCost",
         "type": "@type",
+        "value": "ngsi-ld:hasValue",
         "year": "https://smartdatamodels.org/dataModel.Consumption/year"
     }
 }
