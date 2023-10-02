@@ -1,3 +1,3 @@
-/* (Beta) Export of data model ConsumptionCost of the subject dataModel.Consumption for a postgreSQL database. Pending translation of enumerations and multityped attributes */
+/* (Beta) Export of data model ConsumptionCost of the subject dataModel.Consumption for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
 CREATE TYPE ConsumptionCost_type AS ENUM ('ConsumptionCost');
-CREATE TABLE ConsumptionCost (address json, alternateName text, areaServed text, consumptionPoint text, dataProvider text, dateCreated timestamp, dateModified timestamp, description text, energyConsumedAndCost json, id text, location json, month text, name text, owner json, seeAlso json, source text, type ConsumptionCost_type, year text);
+CREATE TABLE ConsumptionCost (address JSON, alternateName TEXT, areaServed TEXT, dataProvider TEXT, dateCreated TIMESTAMP, dateModified TIMESTAMP, description TEXT, energyConsumedAndCost JSON, month TEXT, name TEXT, owner JSON, source TEXT, type ConsumptionCost_type, year TEXT);
