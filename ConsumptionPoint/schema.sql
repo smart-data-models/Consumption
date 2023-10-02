@@ -1,3 +1,3 @@
-/* (Beta) Export of data model ConsumptionPoint of the subject dataModel.Consumption for a postgreSQL database. Pending translation of enumerations and multityped attributes */
+/* (Beta) Export of data model ConsumptionPoint of the subject dataModel.Consumption for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
 
-CREATE TABLE ConsumptionPoint (address json, alternateName text, areaServed text, consumptionPointCategory json, dataProvider text, dateCreated timestamp, dateModified timestamp, description text, id text, location json, name text, owner json, seeAlso json, source text, type text);
+CREATE TABLE ConsumptionPoint (address JSON, alternateName TEXT, areaServed TEXT, consumptionPointCategory JSON, dataProvider TEXT, dateCreated TIMESTAMP, dateModified TIMESTAMP, description TEXT, name TEXT, owner JSON, source TEXT, type TEXT);
