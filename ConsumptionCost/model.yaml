@@ -66,8 +66,7 @@ ConsumptionCost:
         model: https://schema.org/Text
         type: Property
     consumptionPoint:
-      description: Consumption point identifier which to entity refers
-      oneOf:
+      anyOf:
         - format: uuid
           type: string
         - anyOf:
@@ -86,6 +85,7 @@ ConsumptionCost:
           description: Unique identifier of the entity
           x-ngsi:
             type: Property
+      description: Consumption point identifier which to entity refers
       x-ngsi:
         type: Relationship
     dataProvider:
