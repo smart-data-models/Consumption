@@ -17,7 +17,7 @@
   },
   "address": {
     "type": "StructuredValue",
-    "values": {
+    "value": {
       "addressCountry": "ES",
       "streetAddress": "Passeig del Pintor Sert, 1-9",
       "addressLocality": "La Llagosta, Barcelona",
