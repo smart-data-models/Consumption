@@ -36,7 +36,7 @@
                 },
                 "consumptionPoint": {
                     "description": "Relationship. Consumption point identifier which to entity refers",
-                    "oneOf": [
+                    "anyOf": [
                         {
                             "type": "string",
                             "format": "uuid"
@@ -49,84 +49,82 @@
                 "energyConsumedAndCost": {
                     "type": "array",
                     "description": "Property. Array with energy consumption and cost by type of energy",
-                    "items": [
-                        {
-                            "type": "object",
-                            "description": "Property. Entity with the energy consumed and its cost by type of energy",
-                            "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "description": "Property. Identifier of consumption lecture entity. For example, CUPS in Spain",
-                                    "items": {
+                    "items": {
+                        "type": "object",
+                        "description": "Property. Entity with the energy consumed and its cost by type of energy",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Property. Identifier of consumption lecture entity. For example, CUPS in Spain",
+                                "items": {
+                                    "oneOf": [
+                                        {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        {
+                                            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+                                        }
+                                    ]
+                                }
+                            },
+                            "energyType": {
+                                "type": "string",
+                                "description": "Property. Type of energy"
+                            },
+                            "supplyName": {
+                                "type": "string",
+                                "description": "Property. Name of the supply company"
+                            },
+                            "energyConsumed": {
+                                "type": "object",
+                                "description": "Property. Amount of energy consumed",
+                                "properties": {
+                                    "measurementUnit": {
+                                        "description": "Property. Measurement unit used. Units:'[MTQ, KWH]'. Official list at https://unece.org/trade/documents/2021/06/uncefact-rec20",
                                         "oneOf": [
                                             {
                                                 "type": "string",
-                                                "format": "uri"
+                                                "enum": [
+                                                    "MTQ"
+                                                ]
                                             },
                                             {
-                                                "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+                                                "type": "string",
+                                                "enum": [
+                                                    "KWH"
+                                                ]
                                             }
                                         ]
+                                    },
+                                    "value": {
+                                        "type": "number",
+                                        "description": "Property. Value of the amount of the energy consumed"
                                     }
-                                },
-                                "energyType": {
-                                    "type": "string",
-                                    "description": "Property. Type of energy"
-                                },
-                                "supplyName": {
-                                    "type": "string",
-                                    "description": "Property. Name of the supply company"
-                                },
-                                "energyConsumed": {
-                                    "type": "object",
-                                    "description": "Property. Amount of energy consumed",
-                                    "properties": {
-                                        "measurementUnit": {
-                                            "description": "Property. Measurement unit used. Units:'[MTQ, KWH]'. Official list at https://unece.org/trade/documents/2021/06/uncefact-rec20",
-                                            "oneOf": [
-                                                {
-                                                    "type": "string",
-                                                    "enum": [
-                                                        "MTQ"
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "string",
-                                                    "enum": [
-                                                        "KWH"
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        "value": {
-                                            "type": "number",
-                                            "description": "Property. Value of the amount of the energy consumed"
-                                        }
-                                    }
-                                },
-                                "totalCost": {
-                                    "type": "object",
-                                    "description": "Property. Amount of cost by energy consumed",
-                                    "properties": {
-                                        "currency": {
-                                            "type": "string",
-                                            "description": "Property. Currency names in ISO-4217 format. Enum:'[EUR, USD, GPD, JPY]'. Official list https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list_one.xls",
-                                            "enum": [
-                                                "EUR",
-                                                "GPD",
-                                                "JPY",
-                                                "USD"
-                                            ]
-                                        },
-                                        "value": {
-                                            "type": "number",
-                                            "description": "Property. Value of the amount of the cost for energy consumed"
-                                        }
+                                }
+                            },
+                            "totalCost": {
+                                "type": "object",
+                                "description": "Property. Amount of cost by energy consumed",
+                                "properties": {
+                                    "currency": {
+                                        "type": "string",
+                                        "description": "Property. Currency names in ISO-4217 format. Enum:'[EUR, USD, GPD, JPY]'. Official list https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list_one.xls",
+                                        "enum": [
+                                            "EUR",
+                                            "GPD",
+                                            "JPY",
+                                            "USD"
+                                        ]
+                                    },
+                                    "value": {
+                                        "type": "number",
+                                        "description": "Property. Value of the amount of the cost for energy consumed"
                                     }
                                 }
                             }
                         }
-                    ],
+                    },
                     "minItems": 1
                 }
             }
