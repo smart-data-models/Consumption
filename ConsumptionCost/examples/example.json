@@ -3,7 +3,7 @@
   "type": "ConsumptionCost",
   "year": "2022",
   "month": "07",
-  "consumptionPoint":"did:consumpoint:EN04",
+  "consumptionPoint": "did:consumpoint:EN04",
   "energyConsumedAndCost": [
     {
       "id": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX",
@@ -11,11 +11,11 @@
       "supplyName": "Electric Company, S.A.",
       "energyConsumed": {
         "measurementUnit": "KWH",
-        "value": 800.00
+        "value": 800.0
       },
       "totalCost": {
         "currency": "EUR",
-        "value": 374.00
+        "value": 374.0
       }
     },
     {
@@ -24,7 +24,7 @@
       "supplyName": "Gas Company, S.A.",
       "energyConsumed": {
         "measurementUnit": "MTQ",
-        "value": 35.00
+        "value": 35.0
       },
       "totalCost": {
         "currency": "EUR",
@@ -37,7 +37,7 @@
       "supplyName": "Water Company",
       "energyConsumed": {
         "measurementUnit": "MTQ",
-        "value": 33.00
+        "value": 33.0
       },
       "totalCost": {
         "currency": "EUR",
