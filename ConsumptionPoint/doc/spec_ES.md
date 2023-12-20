@@ -8,7 +8,7 @@
 <!-- /15-License -->  
 <!-- 20-Description -->  
 Descripción global: **Información sobre un punto de consumo determinado**  
-versión: 0.0.1  
+versión: 0.0.2  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
@@ -22,7 +22,8 @@
 	- `postOfficeBoxNumber[string]`: El número del apartado de correos para las direcciones de apartados postales. Por ejemplo, 03578  . Model: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber)  
 	- `postalCode[string]`: El código postal. Por ejemplo, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
 	- `streetAddress[string]`: La dirección  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
-- `alternateName[string]`: Un nombre alternativo para este artículo  - `areaServed[string]`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPointCategory[array]`: Categoría del punto de consumo. Enum:'edificio, farola, vehículo'.  - `dataProvider[string]`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada  - `dateCreated[date-time]`: Fecha de creación de la entidad. Normalmente será asignada por la plataforma de almacenamiento  - `dateModified[date-time]`: Marca de tiempo de la última modificación de la entidad. Suele ser asignada por la plataforma de almacenamiento  - `description[string]`: Descripción de este artículo  - `id[*]`: Identificador único de la entidad  - `location[*]`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon.  - `name[string]`: El nombre de este artículo  - `owner[array]`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios.  - `seeAlso[*]`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source[string]`: Secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type[string]`: Tipo de entidad NGSI. El código se utiliza para describir un punto de consumo  <!-- /30-PropertiesList -->  
+	- `streetNr[string]`: Número que identifica una propiedad específica en una vía pública    
+- `alternateName[string]`: Un nombre alternativo para este artículo  - `areaServed[string]`: La zona geográfica en la que se presta un servicio o se ofrece un artículo  . Model: [https://schema.org/Text](https://schema.org/Text)- `code[string]`: Tipo de entidad NGSI. El código se utiliza para describir un punto de consumo  - `consumptionPointCategory[array]`: Categoría del punto de consumo. Enum:'edificio, farola, vehículo'.  - `dataProvider[string]`: Una secuencia de caracteres que identifica al proveedor de la entidad de datos armonizada  - `dateCreated[date-time]`: Fecha de creación de la entidad. Normalmente será asignada por la plataforma de almacenamiento  - `dateModified[date-time]`: Marca de tiempo de la última modificación de la entidad. Suele ser asignada por la plataforma de almacenamiento  - `description[string]`: Descripción de este artículo  - `id[*]`: Identificador único de la entidad  - `location[*]`: Referencia Geojson al elemento. Puede ser Point, LineString, Polygon, MultiPoint, MultiLineString o MultiPolygon.  - `name[string]`: El nombre de este artículo  - `owner[array]`: Una lista que contiene una secuencia de caracteres codificada en JSON que hace referencia a los identificadores únicos de los propietarios.  - `seeAlso[*]`: lista de uri que apuntan a recursos adicionales sobre el artículo  - `source[string]`: Secuencia de caracteres que indica la fuente original de los datos de la entidad en forma de URL. Se recomienda que sea el nombre de dominio completo del proveedor de origen o la URL del objeto de origen.  - `type[string]`: Tipo de entidad NGSI. Tiene que ser ConsumptionPoint  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Propiedades requeridas  
 - `id`  - `type`  <!-- /35-RequiredProperties -->  
@@ -101,6 +102,11 @@ ConsumptionPoint:
       type: string    
       x-ngsi:    
         model: https://schema.org/Text    
+        type: Property    
+    code:    
+      description: NGSI entity type. Code is used to describe a consumption point    
+      type: string    
+      x-ngsi:    
         type: Property    
     consumptionPointCategory:    
       description: 'Category of the consumption point. Enum:''building, streetlight, vehicle'''    
@@ -362,7 +368,9 @@ ConsumptionPoint:
       x-ngsi:    
         type: Property    
     type:    
-      description: NGSI entity type. Code is used to describe a consumption point    
+      description: NGSI entity type. It has to be ConsumptionPoint    
+      enum:    
+        - ConsumptionPoint    
       type: string    
       x-ngsi:    
         type: Property    
@@ -371,11 +379,11 @@ ConsumptionPoint:
     - type    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2023 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.Consumption/blob/master/ConsumptionPoint/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.Consumption/ConsumptionPoint/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.1    
+  x-version: 0.0.2    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -388,48 +396,50 @@ ConsumptionPoint:
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
-    "id": "did:consumpoint:EN04",  
-    "type": "ConsumptionPoint",  
-    "consumptionPointCategory": ["building"],  
-    "name": "CEIP JOAN MARAGALL",  
-    "alternateName": "Centre d'educació infantil iprimaria Joan Maragall",  
-    "address": {  
-        "addressCountry": "ES",  
-        "streetAddress": "Passeig del Pintor Sert, 1-9",  
-        "addressLocality": "La Llagosta, Barcelona",  
-        "postalCode": "08120"  
-    },  
-    "code": "EN04",  
-    "dateCreated": "2016-08-08T10:18:16Z",  
-    "dateModified": "2016-08-08T10:18:16Z",  
-    "description": "Edifici pertanyent al centre educatiu",  
-    "location": {  
-        "type": "Polygon",  
-        "coordinates": [  
-            [  
-                [  
-                    100,  
-                    0  
-                ],  
-                [  
-                    101,  
-                    0  
-                ],  
-                [  
-                    101,  
-                    1  
-                ],  
-                [  
-                    100,  
-                    1  
-                ],  
-                [  
-                    100,  
-                    0  
-                ]  
-            ]  
+  "id": "did:consumpoint:EN04",  
+  "type": "ConsumptionPoint",  
+  "consumptionPointCategory": [  
+    "building"  
+  ],  
+  "name": "CEIP JOAN MARAGALL",  
+  "alternateName": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall",  
+  "address": {  
+    "addressCountry": "ES",  
+    "streetAddress": "Passeig del Pintor Sert, 1-9",  
+    "addressLocality": "La Llagosta, Barcelona",  
+    "postalCode": "08120"  
+  },  
+  "code": "EN04",  
+  "dateCreated": "2016-08-08T10:18:16Z",  
+  "dateModified": "2016-08-08T10:18:16Z",  
+  "description": "Edifici pertanyent al centre educatiu",  
+  "location": {  
+    "type": "Polygon",  
+    "coordinates": [  
+      [  
+        [  
+          100,  
+          0  
+        ],  
+        [  
+          101,  
+          0  
+        ],  
+        [  
+          101,  
+          1  
+        ],  
+        [  
+          100,  
+          1  
+        ],  
+        [  
+          100,  
+          0  
         ]  
-    }  
+      ]  
+    ]  
+  }  
 }  
 ```  
 </details>  
@@ -441,7 +451,7 @@ ConsumptionPoint:
   "id": "did:consumpoint:EN04",  
   "type": "ConsumptionPoint",  
   "consumptionPointCategory": {  
-    "type": "Array",  
+    "type": "StructuredValue",  
     "value": [  
       "building"  
     ]  
@@ -452,11 +462,11 @@ ConsumptionPoint:
   },  
   "alternateName": {  
     "type": "Text",  
-    "value": "Centre d'educació infantil iprimaria Joan Maragall"  
+    "value": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall"  
   },  
   "address": {  
     "type": "StructuredValue",  
-    "values": {  
+    "value": {  
       "addressCountry": "ES",  
       "streetAddress": "Passeig del Pintor Sert, 1-9",  
       "addressLocality": "La Llagosta, Barcelona",  
@@ -517,54 +527,54 @@ ConsumptionPoint:
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
-    "id": "did:consumpoint:EN04",  
-    "type": "ConsumptionPoint",  
-    "consumptionPointCategory": [  
-        "building"  
-    ],  
-    "name": "CEIP JOAN MARAGALL",  
-    "alternateName": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall",  
-    "address": {  
-        "addressCountry": "ES",  
-        "streetAddress": "Passeig del Pintor Sert, 1-9",  
-        "addressLocality": "La Llagosta, Barcelona",  
-        "postalCode": "08120"  
-    },  
-    "code": "EN04",  
-    "dateCreated": "2016-08-08T10:18:16Z",  
-    "dateModified": "2016-08-08T10:18:16Z",  
-    "description": "Edifici pertanyent al centre educatiu",  
-    "location": {  
-        "type": "Polygon",  
-        "coordinates": [  
-            [  
-                [  
-                    100,  
-                    0  
-                ],  
-                [  
-                    101,  
-                    0  
-                ],  
-                [  
-                    101,  
-                    1  
-                ],  
-                [  
-                    100,  
-                    1  
-                ],  
-                [  
-                    100,  
-                    0  
-                ]  
-            ]  
+  "id": "did:consumpoint:EN04",  
+  "type": "ConsumptionPoint",  
+  "consumptionPointCategory": [  
+    "building"  
+  ],  
+  "name": "CEIP JOAN MARAGALL",  
+  "alternateName": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall",  
+  "address": {  
+    "addressCountry": "ES",  
+    "streetAddress": "Passeig del Pintor Sert, 1-9",  
+    "addressLocality": "La Llagosta, Barcelona",  
+    "postalCode": "08120"  
+  },  
+  "code": "EN04",  
+  "dateCreated": "2016-08-08T10:18:16Z",  
+  "dateModified": "2016-08-08T10:18:16Z",  
+  "description": "Edifici pertanyent al centre educatiu",  
+  "location": {  
+    "type": "Polygon",  
+    "coordinates": [  
+      [  
+        [  
+          100,  
+          0  
+        ],  
+        [  
+          101,  
+          0  
+        ],  
+        [  
+          101,  
+          1  
+        ],  
+        [  
+          100,  
+          1  
+        ],  
+        [  
+          100,  
+          0  
         ]  
-    },  
-    "@context": [  
-        "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld",  
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"  
+      ]  
     ]  
+  },  
+  "@context": [  
+    "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld",  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"  
+  ]  
 }  
 ```  
 </details>  
