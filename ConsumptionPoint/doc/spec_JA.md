@@ -8,7 +8,7 @@
 <!-- /15-License -->  
 <!-- 20-Description -->  
 グローバルな記述：**与えられた消費点に関する情報**。  
-バージョン: 0.0.1  
+バージョン: 0.0.2  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
@@ -22,7 +22,8 @@
 	- `postOfficeBoxNumber[string]`: 私書箱の住所のための私書箱番号。例：03578  . Model: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber)  
 	- `postalCode[string]`: 郵便番号。例：24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
 	- `streetAddress[string]`: 番地  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
-- `alternateName[string]`: この項目の別名  - `areaServed[string]`: サービスまたは提供品が提供される地理的地域  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPointCategory[array]`: 消費ポイントのカテゴリ。列挙型：「建物、街灯、車両  - `dataProvider[string]`: ハーモナイズされたデータ・エンティティの提供者を識別する一連の文字。  - `dateCreated[date-time]`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられます。  - `dateModified[date-time]`: エンティティの最終変更のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description[string]`: この商品の説明  - `id[*]`: エンティティの一意識別子  - `location[*]`: アイテムへの Geojson 参照。Point、LineString、Polygon、MultiPoint、MultiLineString、MultiPolygon のいずれか。  - `name[string]`: このアイテムの名前  - `owner[array]`: 所有者の固有IDを参照するJSONエンコードされた文字列を含むリスト。  - `seeAlso[*]`: アイテムに関する追加リソースを指すURIのリスト  - `source[string]`: エンティティ・データの元のソースを URL として示す一連の文字。ソース・プロバイダの完全修飾ドメイン名、またはソース・オブジェクトの URL を推奨する。  - `type[string]`: NGSI エンティティタイプ。コードは消費地点を記述するために使用される。  <!-- /30-PropertiesList -->  
+	- `streetNr[string]`: 公道上の特定の物件を特定する番号    
+- `alternateName[string]`: この項目の別名  - `areaServed[string]`: サービスまたは提供品が提供される地理的地域  . Model: [https://schema.org/Text](https://schema.org/Text)- `code[string]`: NGSI エンティティタイプ。コードは消費地点を記述するために使用される。  - `consumptionPointCategory[array]`: 消費ポイントのカテゴリ。列挙型：「建物、街灯、車両  - `dataProvider[string]`: ハーモナイズされたデータ・エンティティの提供者を識別する一連の文字。  - `dateCreated[date-time]`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられます。  - `dateModified[date-time]`: エンティティの最終変更のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description[string]`: この商品の説明  - `id[*]`: エンティティの一意識別子  - `location[*]`: アイテムへの Geojson 参照。Point、LineString、Polygon、MultiPoint、MultiLineString、MultiPolygon のいずれか。  - `name[string]`: このアイテムの名前  - `owner[array]`: 所有者の固有IDを参照するJSONエンコードされた文字列を含むリスト。  - `seeAlso[*]`: アイテムに関する追加リソースを指すURIのリスト  - `source[string]`: エンティティ・データの元のソースを URL として示す一連の文字。ソース・プロバイダの完全修飾ドメイン名、またはソース・オブジェクトの URL を推奨する。  - `type[string]`: NGSI エンティティタイプ。ConsumptionPointでなければならない。  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 必須プロパティ  
 - `id`  - `type`  <!-- /35-RequiredProperties -->  
@@ -101,6 +102,11 @@ ConsumptionPoint:
       type: string    
       x-ngsi:    
         model: https://schema.org/Text    
+        type: Property    
+    code:    
+      description: NGSI entity type. Code is used to describe a consumption point    
+      type: string    
+      x-ngsi:    
         type: Property    
     consumptionPointCategory:    
       description: 'Category of the consumption point. Enum:''building, streetlight, vehicle'''    
@@ -362,7 +368,9 @@ ConsumptionPoint:
       x-ngsi:    
         type: Property    
     type:    
-      description: NGSI entity type. Code is used to describe a consumption point    
+      description: NGSI entity type. It has to be ConsumptionPoint    
+      enum:    
+        - ConsumptionPoint    
       type: string    
       x-ngsi:    
         type: Property    
@@ -371,11 +379,11 @@ ConsumptionPoint:
     - type    
   type: object    
   x-derived-from: ""    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2023 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.Consumption/blob/master/ConsumptionPoint/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.Consumption/ConsumptionPoint/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.1    
+  x-version: 0.0.2    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -388,48 +396,50 @@ ConsumptionPoint:
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
-    "id": "did:consumpoint:EN04",  
-    "type": "ConsumptionPoint",  
-    "consumptionPointCategory": ["building"],  
-    "name": "CEIP JOAN MARAGALL",  
-    "alternateName": "Centre d'educació infantil iprimaria Joan Maragall",  
-    "address": {  
-        "addressCountry": "ES",  
-        "streetAddress": "Passeig del Pintor Sert, 1-9",  
-        "addressLocality": "La Llagosta, Barcelona",  
-        "postalCode": "08120"  
-    },  
-    "code": "EN04",  
-    "dateCreated": "2016-08-08T10:18:16Z",  
-    "dateModified": "2016-08-08T10:18:16Z",  
-    "description": "Edifici pertanyent al centre educatiu",  
-    "location": {  
-        "type": "Polygon",  
-        "coordinates": [  
-            [  
-                [  
-                    100,  
-                    0  
-                ],  
-                [  
-                    101,  
-                    0  
-                ],  
-                [  
-                    101,  
-                    1  
-                ],  
-                [  
-                    100,  
-                    1  
-                ],  
-                [  
-                    100,  
-                    0  
-                ]  
-            ]  
+  "id": "did:consumpoint:EN04",  
+  "type": "ConsumptionPoint",  
+  "consumptionPointCategory": [  
+    "building"  
+  ],  
+  "name": "CEIP JOAN MARAGALL",  
+  "alternateName": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall",  
+  "address": {  
+    "addressCountry": "ES",  
+    "streetAddress": "Passeig del Pintor Sert, 1-9",  
+    "addressLocality": "La Llagosta, Barcelona",  
+    "postalCode": "08120"  
+  },  
+  "code": "EN04",  
+  "dateCreated": "2016-08-08T10:18:16Z",  
+  "dateModified": "2016-08-08T10:18:16Z",  
+  "description": "Edifici pertanyent al centre educatiu",  
+  "location": {  
+    "type": "Polygon",  
+    "coordinates": [  
+      [  
+        [  
+          100,  
+          0  
+        ],  
+        [  
+          101,  
+          0  
+        ],  
+        [  
+          101,  
+          1  
+        ],  
+        [  
+          100,  
+          1  
+        ],  
+        [  
+          100,  
+          0  
         ]  
-    }  
+      ]  
+    ]  
+  }  
 }  
 ```  
 </details>  
@@ -441,7 +451,7 @@ ConsumptionPoint:
   "id": "did:consumpoint:EN04",  
   "type": "ConsumptionPoint",  
   "consumptionPointCategory": {  
-    "type": "Array",  
+    "type": "StructuredValue",  
     "value": [  
       "building"  
     ]  
@@ -452,11 +462,11 @@ ConsumptionPoint:
   },  
   "alternateName": {  
     "type": "Text",  
-    "value": "Centre d'educació infantil iprimaria Joan Maragall"  
+    "value": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall"  
   },  
   "address": {  
     "type": "StructuredValue",  
-    "values": {  
+    "value": {  
       "addressCountry": "ES",  
       "streetAddress": "Passeig del Pintor Sert, 1-9",  
       "addressLocality": "La Llagosta, Barcelona",  
@@ -517,54 +527,54 @@ ConsumptionPoint:
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
-    "id": "did:consumpoint:EN04",  
-    "type": "ConsumptionPoint",  
-    "consumptionPointCategory": [  
-        "building"  
-    ],  
-    "name": "CEIP JOAN MARAGALL",  
-    "alternateName": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall",  
-    "address": {  
-        "addressCountry": "ES",  
-        "streetAddress": "Passeig del Pintor Sert, 1-9",  
-        "addressLocality": "La Llagosta, Barcelona",  
-        "postalCode": "08120"  
-    },  
-    "code": "EN04",  
-    "dateCreated": "2016-08-08T10:18:16Z",  
-    "dateModified": "2016-08-08T10:18:16Z",  
-    "description": "Edifici pertanyent al centre educatiu",  
-    "location": {  
-        "type": "Polygon",  
-        "coordinates": [  
-            [  
-                [  
-                    100,  
-                    0  
-                ],  
-                [  
-                    101,  
-                    0  
-                ],  
-                [  
-                    101,  
-                    1  
-                ],  
-                [  
-                    100,  
-                    1  
-                ],  
-                [  
-                    100,  
-                    0  
-                ]  
-            ]  
+  "id": "did:consumpoint:EN04",  
+  "type": "ConsumptionPoint",  
+  "consumptionPointCategory": [  
+    "building"  
+  ],  
+  "name": "CEIP JOAN MARAGALL",  
+  "alternateName": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall",  
+  "address": {  
+    "addressCountry": "ES",  
+    "streetAddress": "Passeig del Pintor Sert, 1-9",  
+    "addressLocality": "La Llagosta, Barcelona",  
+    "postalCode": "08120"  
+  },  
+  "code": "EN04",  
+  "dateCreated": "2016-08-08T10:18:16Z",  
+  "dateModified": "2016-08-08T10:18:16Z",  
+  "description": "Edifici pertanyent al centre educatiu",  
+  "location": {  
+    "type": "Polygon",  
+    "coordinates": [  
+      [  
+        [  
+          100,  
+          0  
+        ],  
+        [  
+          101,  
+          0  
+        ],  
+        [  
+          101,  
+          1  
+        ],  
+        [  
+          100,  
+          1  
+        ],  
+        [  
+          100,  
+          0  
         ]  
-    },  
-    "@context": [  
-        "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld",  
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"  
+      ]  
     ]  
+  },  
+  "@context": [  
+    "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld",  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"  
+  ]  
 }  
 ```  
 </details>  
