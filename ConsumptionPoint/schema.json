@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema#",
-    "$schemaVersion": "0.0.1",
+    "$schemaVersion": "0.0.2",
     "$id": "https://smart-data-models.github.io/dataModel.Consumption/ConsumptionPoint/schema.json",
     "title": "Smart Data Models - Consumption Point",
     "description": "Information on a given consumption point",
@@ -18,6 +18,13 @@
         {
             "properties": {
                 "type": {
+                    "type": "string",
+                    "description": "Property. NGSI entity type. It has to be ConsumptionPoint",
+                    "enum": [
+                        "ConsumptionPoint"
+                    ]
+                },
+                "code": {
                     "type": "string",
                     "description": "Property. NGSI entity type. Code is used to describe a consumption point"
                 },
