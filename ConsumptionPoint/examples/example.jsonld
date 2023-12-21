@@ -5,7 +5,7 @@
     "building"
   ],
   "name": "CEIP JOAN MARAGALL",
-  "alternateName": "Centre d'educació infantil iprimaria Joan Maragall",
+  "alternateName": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall",
   "address": {
     "addressCountry": "ES",
     "streetAddress": "Passeig del Pintor Sert, 1-9",
@@ -44,6 +44,7 @@
     ]
   },
   "@context": [
-    "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld"
+    "https://smart-data-models.github.io/dataModel.Consumption/context.jsonld",
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"
   ]
 }

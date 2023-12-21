@@ -1,0 +1,3 @@
+/* (Beta) Export of data model ConsumptionPoint of the subject dataModel.Consumption for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE ConsumptionPoint_type AS ENUM ('ConsumptionPoint');
+CREATE TABLE ConsumptionPoint (address JSON, alternateName TEXT, areaServed TEXT, code TEXT, consumptionPointCategory JSON, dataProvider TEXT, dateCreated TIMESTAMP, dateModified TIMESTAMP, description TEXT, id TEXT PRIMARY KEY, location JSON, name TEXT, owner JSON, seeAlso JSON, source TEXT, type ConsumptionPoint_type);

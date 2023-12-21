@@ -10,54 +10,25 @@
     "value": "07"
   },
   "consumptionPoint": {
-    "type": "Relationship",
-    "value":
-      "did:consumpoint:EN04"
-
+    "type": "Text",
+    "value": "did:consumpoint:EN04"
   },
-  "energyConsumedAndCost": [
-    {
-      "type": "StructuredValue",
-      "value": {
-        "id": {
-          "type": "Text",
-          "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"
-        },
-        "energyType": {
-          "type": "Text",
-          "value": "electricity"
-        },
-        "supplyName": {
-          "type": "Text",
-          "value": "Electric Company, S.A."
-        },
+  "energyConsumedAndCost": {
+    "type": "StructuredValue",
+    "value": [
+      {
+        "id": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX",
+        "energyType": "electricity",
+        "supplyName": "Electric Company, S.A.",
         "energyConsumed": {
-          "type": "StructuredValue",
-          "value": {
-            "measurementUnit": {
-              "type": "Text",
-              "value": "KWH"
-            },
-            "value": {
-              "type": "Number",
-              "value": 800.00
-            }
-          }
+          "measurementUnit": "KWH",
+          "value": 800.0
         },
-        "energyAmount": {
-          "type": "StructuredValue",
-          "value": {
-            "currency": {
-              "type": "Text",
-              "value": "EUR"
-            },
-            "value": {
-              "type": "Number",
-              "value": 374.00
-            }
-          }
+        "totalCost": {
+          "currency": "EUR",
+          "value": 374.0
         }
       }
-    }
-  ]
+    ]
+  }
 }

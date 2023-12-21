@@ -11,7 +11,7 @@ info:
   description:  |
     Information on a given consumption point
   title: ConsumptionPoint
-  version: "0.0.1"
+  version: "0.0.2"
 openapi: "3.0.0"
 
 paths: 

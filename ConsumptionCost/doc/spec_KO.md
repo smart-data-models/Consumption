@@ -1,34 +1,35 @@
 <!-- 10-Header -->    
 [![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)    
-Entité : Coût de la consommation    
-================================<!-- /10-Header -->    
+엔티티: 소비 비용    
+==========<!-- /10-Header -->    
 <!-- 15-License -->    
-[Licence ouverte] (https://github.com/smart-data-models//dataModel.Consumption/blob/master/ConsumptionCost/LICENSE.md)    
-[document généré automatiquement] (https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)    
+[오픈 라이선스](https://github.com/smart-data-models//dataModel.Consumption/blob/master/ConsumptionCost/LICENSE.md)    
+[문서 자동 생성](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)    
 <!-- /15-License -->    
 <!-- 20-Description -->    
-Description globale : **Information sur l'énergie consommée et son coût par point de consommation**    
-version : 0.0.1    
+글로벌 설명: **소비 지점별 에너지 소비량 및 비용 정보**.    
+버전: 0.0.1    
 <!-- /20-Description -->    
 <!-- 30-PropertiesList -->    
-## Liste des propriétés    
-<sup><sub>[*] S'il n'y a pas de type dans un attribut, c'est parce qu'il peut avoir plusieurs types ou différents formats/modèles</sub></sup>.    
-- `address[object]`: L'adresse postale  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: Le pays. Par exemple, l'Espagne  . Model: [https://schema.org/addressCountry](https://schema.org/addressCountry)    
-	- `addressLocality[string]`: La localité dans laquelle se trouve l'adresse postale et qui se trouve dans la région  . Model: [https://schema.org/addressLocality](https://schema.org/addressLocality)    
-	- `addressRegion[string]`: La région dans laquelle se trouve la localité et qui se trouve dans le pays  . Model: [https://schema.org/addressRegion](https://schema.org/addressRegion)    
-	- `district[string]`: Un district est un type de division administrative qui, dans certains pays, est géré par le gouvernement local.      
-	- `postOfficeBoxNumber[string]`: Le numéro de la boîte postale pour les adresses de boîtes postales. Par exemple, 03578  . Model: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber)    
-	- `postalCode[string]`: Le code postal. Par exemple, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)    
-	- `streetAddress[string]`: L'adresse de la rue  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)    
-- `alternateName[string]`: Un nom alternatif pour ce poste  - `areaServed[string]`: La zone géographique où un service ou un article est offert  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPoint[*]`: Identifiant du point de consommation auquel l'entité se réfère  - `dataProvider[string]`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées  - `dateCreated[date-time]`: Horodatage de la création de l'entité. Celle-ci est généralement attribuée par la plate-forme de stockage  - `dateModified[date-time]`: Date de la dernière modification de l'entité. Cette date est généralement attribuée par la plate-forme de stockage  - `description[string]`: Une description de l'article  - `energyConsumedAndCost[array]`: Tableau avec consommation d'énergie et coût par type d'énergie  - `id[*]`: Identifiant unique de l'entité  - `location[*]`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une chaîne de ligne, d'un polygone, d'un point multiple, d'une chaîne de ligne multiple ou d'un polygone multiple.  - `month[string]`: Le mois auquel l'entité se réfère. Format MM, ex : '07'  - `name[string]`: Le nom de cet élément  - `owner[array]`: Une liste contenant une séquence de caractères encodés JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso[*]`: liste d'uri pointant vers des ressources supplémentaires concernant l'élément  - `source[string]`: Séquence de caractères indiquant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source ou l'URL de l'objet source.  - `type[string]`: Type d'entité NGSI. Il doit s'agir de ConsumptionCost  - `year[string]`: L'année à laquelle l'entité se réfère. Format YYYY, ex : '2022'  <!-- /30-PropertiesList -->    
+## 속성 목록    
+<sup><sub>[*] 속성에 유형이 없는 것은 여러 유형 또는 다른 형식/패턴을 가질 수 있기 때문입니다</sub></sup>.    
+- `address[object]`: 우편 주소  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: 국가. 예를 들어, 스페인  . Model: [https://schema.org/addressCountry](https://schema.org/addressCountry)    
+	- `addressLocality[string]`: 도로명 주소가 있는 지역 및 해당 지역에 속한 지역  . Model: [https://schema.org/addressLocality](https://schema.org/addressLocality)    
+	- `addressRegion[string]`: 해당 지역이 위치한 지역과 해당 국가의 지역  . Model: [https://schema.org/addressRegion](https://schema.org/addressRegion)    
+	- `district[string]`: 지구는 일부 국가에서는 지방 정부에서 관리하는 행정 구역의 일종입니다.      
+	- `postOfficeBoxNumber[string]`: 사서함 주소의 우체국 사서함 번호입니다. 예: 03578  . Model: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber)    
+	- `postalCode[string]`: 우편 번호입니다. 예: 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)    
+	- `streetAddress[string]`: 거리 주소  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)    
+	- `streetNr[string]`: 공공 도로의 특정 건물을 식별하는 번호      
+- `alternateName[string]`: 이 항목의 대체 이름  - `areaServed[string]`: 서비스 또는 제공 품목이 제공되는 지리적 영역  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPoint[*]`: 엔티티가 참조하는 소비 포인트 식별자  - `dataProvider[string]`: 조화된 데이터 엔티티의 공급자를 식별하는 일련의 문자  - `dateCreated[date-time]`: 엔티티 생성 타임스탬프. 이는 일반적으로 스토리지 플랫폼에서 할당합니다.  - `dateModified[date-time]`: 엔티티의 마지막 수정 타임스탬프입니다. 이는 일반적으로 스토리지 플랫폼에서 할당합니다.  - `description[string]`: 이 항목에 대한 설명  - `energyConsumedAndCost[array]`: 에너지 유형별 에너지 소비량 및 비용으로 배열하기  - `id[*]`: 엔티티의 고유 식별자  - `location[*]`: 항목에 대한 지오숀 참조입니다. 포인트, 라인 문자열, 다각형, 멀티포인트, 멀티라인 문자열 또는 멀티폴리곤일 수 있습니다.  - `month[string]`: 엔티티가 참조하는 월입니다. MM 형식, 예:'07'  - `name[string]`: 이 항목의 이름  - `owner[array]`: 소유자의 고유 ID를 참조하는 JSON 인코딩된 문자 시퀀스가 포함된 목록입니다.  - `seeAlso[*]`: 항목에 대한 추가 리소스를 가리키는 URL 목록  - `source[string]`: 엔티티 데이터의 원본 소스를 URL로 제공하는 문자 시퀀스입니다. 소스 공급자의 정규화된 도메인 이름 또는 소스 개체에 대한 URL을 사용하는 것이 좋습니다.  - `type[string]`: NGSI 엔티티 유형입니다. 소비 비용이어야 합니다.  - `year[string]`: 엔티티가 참조하는 연도입니다. YYYY 형식(예: '2022')  <!-- /30-PropertiesList -->    
 <!-- 35-RequiredProperties -->    
-Propriétés requises    
+필수 속성    
 - `consumptionPoint`  - `energyConsumedAndCost`  - `id`  - `type`  <!-- /35-RequiredProperties -->    
 <!-- 40-RequiredProperties -->    
 <!-- /40-RequiredProperties -->    
 <!-- 50-DataModelHeader -->    
-## Modèle de données description des propriétés    
-Classés par ordre alphabétique (cliquez pour plus de détails)    
+## 속성에 대한 데이터 모델 설명    
+알파벳순으로 정렬(자세한 내용을 보려면 클릭)    
 <!-- /50-DataModelHeader -->    
 <!-- 60-ModelYaml -->    
 <details><summary><strong>full yaml details</strong></summary>      
@@ -499,9 +500,9 @@ ConsumptionCost:
 <!-- 70-MiddleNotes -->    
 <!-- /70-MiddleNotes -->    
 <!-- 80-Examples -->    
-## Exemples de charges utiles    
-#### ConsommationCoût Valeurs clés de l'INSIG-v2 Exemple    
-Voici un exemple de coût de consommation au format JSON-LD sous forme de valeurs clés. Ceci est compatible avec NGSI-v2 lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.    
+## 페이로드 예시    
+#### 소비 비용 NGSI-v2 키 값 예시    
+다음은 키 값으로 JSON-LD 형식의 소비 비용 예시입니다. 이는 `옵션=키값`을 사용할 때 NGSI-v2와 호환되며 개별 엔티티의 컨텍스트 데이터를 반환합니다.    
 <details><summary><strong>show/hide example</strong></summary>      
 ```json  
 {  
@@ -554,8 +555,8 @@ ConsumptionCost:
 }  
 ```  
 </details>    
-#### ConsommationCoût INSIG-v2 normalisée Exemple    
-Voici un exemple de coût de consommation au format JSON-LD tel qu'il a été normalisé. Ce format est compatible avec les NGSI-v2 lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.    
+#### 소비 비용 NGSI-v2 정규화 예제    
+다음은 정규화된 JSON-LD 형식의 소비 비용 예시입니다. 이는 옵션을 사용하지 않을 때 NGSI-v2와 호환되며 개별 엔티티의 컨텍스트 데이터를 반환합니다.    
 <details><summary><strong>show/hide example</strong></summary>      
 ```json  
 {  
@@ -594,8 +595,8 @@ ConsumptionCost:
 }  
 ```  
 </details>    
-#### ConsumptionCost Valeurs clés de l'INS-LD Exemple    
-Voici un exemple de coût de consommation au format JSON-LD sous forme de valeurs clés. Ce format est compatible avec NGSI-LD lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.    
+#### 소비 비용 NGSI-LD 키 값 예시    
+다음은 키 값으로 JSON-LD 형식의 소비 비용 예시입니다. 이는 `옵션=키값`을 사용할 때 NGSI-LD와 호환되며 개별 엔티티의 컨텍스트 데이터를 반환합니다.    
 <details><summary><strong>show/hide example</strong></summary>      
 ```json  
 {  
@@ -652,8 +653,8 @@ ConsumptionCost:
 }  
 ```  
 </details>    
-#### Coût de consommation NGSI-LD normalisé Exemple    
-Voici un exemple de coût de consommation au format JSON-LD tel qu'il a été normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.    
+#### 소비 비용 NGSI-LD 정규화 예시    
+다음은 정규화된 JSON-LD 형식의 소비 비용 예시입니다. 이는 옵션을 사용하지 않을 때 NGSI-LD와 호환되며 개별 엔티티의 컨텍스트 데이터를 반환합니다.    
 <details><summary><strong>show/hide example</strong></summary>      
 ```json  
 {  
@@ -726,7 +727,7 @@ ConsumptionCost:
 <!-- 90-FooterNotes -->    
 <!-- /90-FooterNotes -->    
 <!-- 95-Units -->    
-Voir [FAQ 10] (https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse à la question de savoir comment traiter les unités de magnitude.    
+[FAQ 10](https://smartdatamodels.org/index.php/faqs/)을 참조하여 규모 단위를 다루는 방법에 대한 답변을 확인하세요.    
 <!-- /95-Units -->    
 <!-- 97-LastFooter -->    
 ---    

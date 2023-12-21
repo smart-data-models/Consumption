@@ -2,48 +2,48 @@
   "id": "did:enerconsumcost:2022-07-3325",
   "type": "ConsumptionCost",
   "year": {
-    "type": "Property",
+    "type": "Text",
     "value": "2022"
   },
   "month": {
-    "type": "Property",
+    "type": "Text",
     "value": "07"
   },
   "consumptionPoint": {
     "type": "Relationship",
-    "object": "did:consumpoint:EN04"
+    "value": "did:consumpoint:EN04"
   },
   "energyConsumedAndCost": [
     {
-      "type": "Property",
+      "type": "StructuredValue",
       "value": {
         "id": {
-          "type": "Property",
+          "type": "Text",
           "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"
         },
         "energyType": {
-          "type": "Property",
+          "type": "Text",
           "value": "electricity"
         },
         "supplyName": {
-          "type": "Property",
+          "type": "Text",
           "value": "Electric Company, S.A."
         },
         "energyConsumed": {
-          "type": "Property",
+          "type": "StructuredValue",
           "value": {
             "measurementUnit": {
-              "type": "Property",
+              "type": "Text",
               "value": "KWH"
             },
             "value": {
-              "type": "Property",
+              "type": "Number",
               "value": 800.00
             }
           }
         },
-        "energyAmount": {
-          "type": "Property",
+        "totalCost": {
+          "type": "StructuredValue",
           "value": {
             "currency": {
               "type": "Text",
@@ -60,6 +60,6 @@
   ],
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-    "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/context.jsonld"
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Consumption/master/context.jsonld"
   ]
 }

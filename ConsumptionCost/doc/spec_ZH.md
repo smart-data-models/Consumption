@@ -1,34 +1,34 @@
 <!-- 10-Header -->    
 [![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)    
-Entité : Coût de la consommation    
-================================<!-- /10-Header -->    
+实体：消费成本    
+=======<!-- /10-Header -->    
 <!-- 15-License -->    
-[Licence ouverte] (https://github.com/smart-data-models//dataModel.Consumption/blob/master/ConsumptionCost/LICENSE.md)    
-[document généré automatiquement] (https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)    
+[开放许可](https://github.com/smart-data-models//dataModel.Consumption/blob/master/ConsumptionCost/LICENSE.md)    
+[文件自动生成](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)    
 <!-- /15-License -->    
 <!-- 20-Description -->    
-Description globale : **Information sur l'énergie consommée et son coût par point de consommation**    
-version : 0.0.1    
+全局描述按消耗点分列的**能源消耗及其成本信息**    
+版本： 0.0.1    
 <!-- /20-Description -->    
 <!-- 30-PropertiesList -->    
-## Liste des propriétés    
-<sup><sub>[*] S'il n'y a pas de type dans un attribut, c'est parce qu'il peut avoir plusieurs types ou différents formats/modèles</sub></sup>.    
-- `address[object]`: L'adresse postale  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: Le pays. Par exemple, l'Espagne  . Model: [https://schema.org/addressCountry](https://schema.org/addressCountry)    
-	- `addressLocality[string]`: La localité dans laquelle se trouve l'adresse postale et qui se trouve dans la région  . Model: [https://schema.org/addressLocality](https://schema.org/addressLocality)    
-	- `addressRegion[string]`: La région dans laquelle se trouve la localité et qui se trouve dans le pays  . Model: [https://schema.org/addressRegion](https://schema.org/addressRegion)    
-	- `district[string]`: Un district est un type de division administrative qui, dans certains pays, est géré par le gouvernement local.      
-	- `postOfficeBoxNumber[string]`: Le numéro de la boîte postale pour les adresses de boîtes postales. Par exemple, 03578  . Model: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber)    
-	- `postalCode[string]`: Le code postal. Par exemple, 24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)    
-	- `streetAddress[string]`: L'adresse de la rue  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)    
-- `alternateName[string]`: Un nom alternatif pour ce poste  - `areaServed[string]`: La zone géographique où un service ou un article est offert  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPoint[*]`: Identifiant du point de consommation auquel l'entité se réfère  - `dataProvider[string]`: Une séquence de caractères identifiant le fournisseur de l'entité de données harmonisées  - `dateCreated[date-time]`: Horodatage de la création de l'entité. Celle-ci est généralement attribuée par la plate-forme de stockage  - `dateModified[date-time]`: Date de la dernière modification de l'entité. Cette date est généralement attribuée par la plate-forme de stockage  - `description[string]`: Une description de l'article  - `energyConsumedAndCost[array]`: Tableau avec consommation d'énergie et coût par type d'énergie  - `id[*]`: Identifiant unique de l'entité  - `location[*]`: Référence Geojson à l'élément. Il peut s'agir d'un point, d'une chaîne de ligne, d'un polygone, d'un point multiple, d'une chaîne de ligne multiple ou d'un polygone multiple.  - `month[string]`: Le mois auquel l'entité se réfère. Format MM, ex : '07'  - `name[string]`: Le nom de cet élément  - `owner[array]`: Une liste contenant une séquence de caractères encodés JSON référençant les identifiants uniques du ou des propriétaires.  - `seeAlso[*]`: liste d'uri pointant vers des ressources supplémentaires concernant l'élément  - `source[string]`: Séquence de caractères indiquant la source originale des données de l'entité sous forme d'URL. Il est recommandé d'utiliser le nom de domaine complet du fournisseur de la source ou l'URL de l'objet source.  - `type[string]`: Type d'entité NGSI. Il doit s'agir de ConsumptionCost  - `year[string]`: L'année à laquelle l'entité se réfère. Format YYYY, ex : '2022'  <!-- /30-PropertiesList -->    
+## 属性列表    
+<sup><sub>[*] 如果属性中没有类型，是因为它可能有多个类型或不同的格式/模式</sub></sup>。    
+- `address[object]`: 邮寄地址  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: 国家。例如，西班牙  . Model: [https://schema.org/addressCountry](https://schema.org/addressCountry)    
+	- `addressLocality[string]`: 街道地址所在的地点，以及该地点所在的区域  . Model: [https://schema.org/addressLocality](https://schema.org/addressLocality)    
+	- `addressRegion[string]`: 地点所在的地区，以及该地区位于哪个国家  . Model: [https://schema.org/addressRegion](https://schema.org/addressRegion)    
+	- `district[string]`: 地区是一种行政区划，在一些国家由地方政府管理      
+	- `postOfficeBoxNumber[string]`: 用于邮政信箱地址的邮政信箱号码。例如：03578  . Model: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber)    
+	- `postalCode[string]`: 邮政编码。例如：24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)    
+	- `streetAddress[string]`: 街道地址  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)    
+- `alternateName[string]`: 该项目的替代名称  - `areaServed[string]`: 提供服务或提供物品的地理区域  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPoint[*]`: 实体指向的消费点标识符  - `dataProvider[string]`: 标识统一数据实体提供者的字符序列  - `dateCreated[date-time]`: 实体创建时间戳。通常由存储平台分配  - `dateModified[date-time]`: 实体最后一次修改的时间戳。通常由存储平台分配  - `description[string]`: 项目描述  - `energyConsumedAndCost[array]`: 按能源类型分列的能耗和成本阵列  - `id[*]`: 实体的唯一标识符  - `location[*]`: 项目的 Geojson 引用。它可以是点、线条字符串、多边形、多点、多线条字符串或多多边形  - `month[string]`: 实体所指的月份。格式为 MM，例如：'07  - `name[string]`: 该项目的名称  - `owner[array]`: 包含一个 JSON 编码字符序列的列表，其中引用了所有者的唯一 Ids  - `seeAlso[*]`: 指向有关该项目的其他资源的 uri 列表  - `source[string]`: 以 URL 形式给出实体数据原始来源的字符串。建议使用源提供者的完全合格域名或源对象的 URL  - `type[string]`: NGSI 实体类型。必须是 ConsumptionCost  - `year[string]`: 实体所指的年份。格式 YYYY，例如：'2022  <!-- /30-PropertiesList -->    
 <!-- 35-RequiredProperties -->    
-Propriétés requises    
+所需属性    
 - `consumptionPoint`  - `energyConsumedAndCost`  - `id`  - `type`  <!-- /35-RequiredProperties -->    
 <!-- 40-RequiredProperties -->    
 <!-- /40-RequiredProperties -->    
 <!-- 50-DataModelHeader -->    
-## Modèle de données description des propriétés    
-Classés par ordre alphabétique (cliquez pour plus de détails)    
+## 属性的数据模型描述    
+按字母顺序排列（点击查看详情）    
 <!-- /50-DataModelHeader -->    
 <!-- 60-ModelYaml -->    
 <details><summary><strong>full yaml details</strong></summary>      
@@ -499,9 +499,9 @@ ConsumptionCost:
 <!-- 70-MiddleNotes -->    
 <!-- /70-MiddleNotes -->    
 <!-- 80-Examples -->    
-## Exemples de charges utiles    
-#### ConsommationCoût Valeurs clés de l'INSIG-v2 Exemple    
-Voici un exemple de coût de consommation au format JSON-LD sous forme de valeurs clés. Ceci est compatible avec NGSI-v2 lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.    
+## 有效载荷示例    
+#### ConsumptionCost NGSI-v2 关键值 示例    
+下面是一个以 JSON-LD 格式作为键值的 ConsumptionCost 示例。当使用 `options=keyValues` 时，它与 NGSI-v2 兼容，并返回单个实体的上下文数据。    
 <details><summary><strong>show/hide example</strong></summary>      
 ```json  
 {  
@@ -554,8 +554,8 @@ ConsumptionCost:
 }  
 ```  
 </details>    
-#### ConsommationCoût INSIG-v2 normalisée Exemple    
-Voici un exemple de coût de consommation au format JSON-LD tel qu'il a été normalisé. Ce format est compatible avec les NGSI-v2 lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.    
+#### ConsumptionCost NGSI-v2 normalized 示例    
+下面是一个规范化 JSON-LD 格式的 ConsumptionCost 示例。在不使用选项的情况下，它与 NGSI-v2 兼容，并返回单个实体的上下文数据。    
 <details><summary><strong>show/hide example</strong></summary>      
 ```json  
 {  
@@ -594,8 +594,8 @@ ConsumptionCost:
 }  
 ```  
 </details>    
-#### ConsumptionCost Valeurs clés de l'INS-LD Exemple    
-Voici un exemple de coût de consommation au format JSON-LD sous forme de valeurs clés. Ce format est compatible avec NGSI-LD lorsque l'on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.    
+#### 消费成本 NGSI-LD 关键值 示例    
+下面是一个以 JSON-LD 格式作为键值的 ConsumptionCost 示例。当使用 `options=keyValues` 时，它与 NGSI-LD 兼容，并返回单个实体的上下文数据。    
 <details><summary><strong>show/hide example</strong></summary>      
 ```json  
 {  
@@ -652,8 +652,8 @@ ConsumptionCost:
 }  
 ```  
 </details>    
-#### Coût de consommation NGSI-LD normalisé Exemple    
-Voici un exemple de coût de consommation au format JSON-LD tel qu'il a été normalisé. Ce format est compatible avec NGSI-LD lorsqu'il n'utilise pas d'options et renvoie les données contextuelles d'une entité individuelle.    
+#### 消费成本 NGSI-LD 正常化示例    
+下面是一个规范化 JSON-LD 格式的 ConsumptionCost 示例。在不使用选项时，它与 NGSI-LD 兼容，并返回单个实体的上下文数据。    
 <details><summary><strong>show/hide example</strong></summary>      
 ```json  
 {  
@@ -726,7 +726,7 @@ ConsumptionCost:
 <!-- 90-FooterNotes -->    
 <!-- /90-FooterNotes -->    
 <!-- 95-Units -->    
-Voir [FAQ 10] (https://smartdatamodels.org/index.php/faqs/) pour obtenir une réponse à la question de savoir comment traiter les unités de magnitude.    
+请参阅 [FAQ 10](https://smartdatamodels.org/index.php/faqs/)，获取如何处理幅度单位的答案。    
 <!-- /95-Units -->    
 <!-- 97-LastFooter -->    
 ---    

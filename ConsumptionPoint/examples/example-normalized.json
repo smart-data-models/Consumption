@@ -2,7 +2,7 @@
   "id": "did:consumpoint:EN04",
   "type": "ConsumptionPoint",
   "consumptionPointCategory": {
-    "type": "Array",
+    "type": "StructuredValue",
     "value": [
       "building"
     ]
@@ -13,11 +13,11 @@
   },
   "alternateName": {
     "type": "Text",
-    "value": "Centre d'educació infantil iprimaria Joan Maragall"
+    "value": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall"
   },
   "address": {
     "type": "StructuredValue",
-    "values": {
+    "value": {
       "addressCountry": "ES",
       "streetAddress": "Passeig del Pintor Sert, 1-9",
       "addressLocality": "La Llagosta, Barcelona",
