@@ -23,14 +23,6 @@
             "comment": "The geographic area where a service or offered item is provided"
         },
         {
-            "name": "code",
-            "writable": true,
-            "displayName": "code",
-            "@type": "Property",
-            "schema": "string",
-            "comment": "NGSI entity type. Code is used to describe a consumption point"
-        },
-        {
             "name": "dataProvider",
             "writable": true,
             "displayName": "dataProvider",
