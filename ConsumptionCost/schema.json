@@ -70,7 +70,7 @@
                             },
                             "energyType": {
                                 "type": "string",
-                                "description": "Property. Type of energy"
+                                "description": "Property. Type of energy measured"
                             },
                             "supplyName": {
                                 "type": "string",
