@@ -2,11 +2,11 @@
   "id": "did:enerconsumcost:2022-07-3325",
   "type": "ConsumptionCost",
   "year": {
-    "type": "Text",
+    "type": "Property",
     "value": "2022"
   },
   "month": {
-    "type": "Text",
+    "type": "Property",
     "value": "07"
   },
   "consumptionPoint": {
@@ -15,42 +15,42 @@
   },
   "energyConsumedAndCost": [
     {
-      "type": "StructuredValue",
+      "type": "Property",
       "value": {
         "id": {
-          "type": "Text",
+          "type": "Property",
           "value": "did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX"
         },
         "energyType": {
-          "type": "Text",
+          "type": "Property",
           "value": "electricity"
         },
         "supplyName": {
-          "type": "Text",
+          "type": "Property",
           "value": "Electric Company, S.A."
         },
         "energyConsumed": {
-          "type": "StructuredValue",
+          "type": "Property",
           "value": {
             "measurementUnit": {
-              "type": "Text",
+              "type": "Property",
               "value": "KWH"
             },
             "value": {
-              "type": "Number",
+              "type": "Property",
               "value": 800.00
             }
           }
         },
         "totalCost": {
-          "type": "StructuredValue",
+          "type": "Property",
           "value": {
             "currency": {
-              "type": "Text",
+              "type": "Property",
               "value": "EUR"
             },
             "value": {
-              "type": "Number",
+              "type": "Property",
               "value": 374.00
             }
           }
