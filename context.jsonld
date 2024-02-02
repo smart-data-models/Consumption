@@ -12,7 +12,6 @@
             "@container": "@list",
             "@id": "geojson:bbox"
         },
-        "code": "https://smartdatamodels.org/dataModel.Consumption/code",
         "consumptionPoint": "https://smartdatamodels.org/dataModel.Consumption/consumptionPoint",
         "consumptionPointCategory": "https://smartdatamodels.org/dataModel.Consumption/consumptionPointCategory",
         "coordinates": {
