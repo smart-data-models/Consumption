@@ -65,6 +65,11 @@ ConsumptionPoint:
       x-ngsi:
         model: https://schema.org/Text
         type: Property
+    code:
+      description: internal code for the consumption point
+      type: string
+      x-ngsi:
+        type: Property
     consumptionPointCategory:
       description: 'Category of the consumption point. Enum:''building, streetlight, vehicle'''
       items:
@@ -340,4 +345,4 @@ ConsumptionPoint:
   x-license-url: https://github.com/smart-data-models/dataModel.Consumption/blob/master/ConsumptionPoint/LICENSE.md
   x-model-schema: https://smart-data-models.github.io/dataModel.Consumption/ConsumptionPoint/schema.json
   x-model-tags: ""
-  x-version: 0.0.2
+  x-version: 0.0.3
