@@ -7,18 +7,28 @@
 [文書は自動的に生成される](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
+グローバルな記述：**与えられた消費点に関する情報**。  
+バージョン: 0.0.2  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
 ## プロパティのリスト  
 
 <sup><sub>[*] 属性に型がない場合は、複数の型があるか、異なるフォーマット/パターンがある可能性があるためです</sub></sup>。  
-<!-- /30-PropertiesList -->  
+- `address[object]`: 郵送先住所  . Model: [https://schema.org/address](https://schema.org/address)	- `addressCountry[string]`: 国。例えば、スペイン  . Model: [https://schema.org/addressCountry](https://schema.org/addressCountry)  
+	- `addressLocality[string]`: 番地がある地域と、その地域に含まれる地域  . Model: [https://schema.org/addressLocality](https://schema.org/addressLocality)  
+	- `addressRegion[string]`: その地域がある地域、またその国がある地域  . Model: [https://schema.org/addressRegion](https://schema.org/addressRegion)  
+	- `district[string]`: 地区とは行政区画の一種で、国によっては地方自治体によって管理されている。    
+	- `postOfficeBoxNumber[string]`: 私書箱の住所のための私書箱番号。例：03578  . Model: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber)  
+	- `postalCode[string]`: 郵便番号。例：24004  . Model: [https://schema.org/https://schema.org/postalCode](https://schema.org/https://schema.org/postalCode)  
+	- `streetAddress[string]`: 番地  . Model: [https://schema.org/streetAddress](https://schema.org/streetAddress)  
+	- `streetNr[string]`: 公道上の特定の物件を特定する番号    
+- `alternateName[string]`: この項目の別名  - `areaServed[string]`: サービスまたは提供品が提供される地理的地域  . Model: [https://schema.org/Text](https://schema.org/Text)- `consumptionPointCategory[array]`: 消費ポイントのカテゴリ。列挙型：「建物、街灯、車両  - `dataProvider[string]`: ハーモナイズされたデータ・エンティティの提供者を識別する一連の文字。  - `dateCreated[date-time]`: エンティティの作成タイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられます。  - `dateModified[date-time]`: エンティティの最終変更のタイムスタンプ。これは通常、ストレージプラットフォームによって割り当てられる。  - `description[string]`: この商品の説明  - `id[*]`: エンティティの一意識別子  - `location[*]`: アイテムへの Geojson 参照。Point、LineString、Polygon、MultiPoint、MultiLineString、MultiPolygon のいずれか。  - `name[string]`: このアイテムの名前  - `owner[array]`: 所有者の固有IDを参照するJSONエンコードされた文字列を含むリスト。  - `seeAlso[*]`: アイテムに関する追加リソースを指すURIのリスト  - `source[string]`: エンティティ・データの元のソースを URL として示す一連の文字。ソース・プロバイダの完全修飾ドメイン名、またはソース・オブジェクトの URL を推奨する。  - `type[string]`: NGSI エンティティタイプ。ConsumptionPointでなければならない。  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 必須プロパティ  
-- 必須プロパティなし  <!-- /35-RequiredProperties -->  
-<!-- 40-RequiredProperties -->  
-<!-- /40-RequiredProperties -->  
+- `id`  - `type`  <!-- /35-RequiredProperties -->  
+<!-- 40-NotesYaml -->  
+<!-- /40-NotesYaml -->  
 <!-- 50-DataModelHeader -->  
 ## プロパティのデータモデル記述  
 アルファベット順（クリックで詳細表示）  
@@ -92,6 +102,11 @@ ConsumptionPoint:
       type: string    
       x-ngsi:    
         model: https://schema.org/Text    
+        type: Property    
+    code:    
+      description: internal code for the consumption point    
+      type: string    
+      x-ngsi:    
         type: Property    
     consumptionPointCategory:    
       description: 'Category of the consumption point. Enum:''building, streetlight, vehicle'''    
@@ -368,7 +383,7 @@ ConsumptionPoint:
   x-license-url: https://github.com/smart-data-models/dataModel.Consumption/blob/master/ConsumptionPoint/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.Consumption/ConsumptionPoint/schema.json    
   x-model-tags: ""    
-  x-version: 0.0.2    
+  x-version: 0.0.3    
 ```  
 </details>    
 <!-- /60-ModelYaml -->  
@@ -518,7 +533,7 @@ ConsumptionPoint:
     "building"  
   ],  
   "name": "CEIP JOAN MARAGALL",  
-  "alternateName": "Centre d'educaci\u00f3 infantil iprimaria Joan Maragall",  
+  "alternateName": "Centre d educacion infantil i primaria Joan Maragall",  
   "address": {  
     "addressCountry": "ES",  
     "streetAddress": "Passeig del Pintor Sert, 1-9",  
