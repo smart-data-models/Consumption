@@ -24,31 +24,36 @@
 #         curl -X GET http://localhost:1026/ngsi-ld/v1/entities?local=true&limit=1000
 #         
 #         # now the python code you can use to insert some value in the context broker according to the data model
+#         # Version Warning! 
+#         # This code is designed to work with the version 0.8 of pysmartdatamodels or later
+#         # to work with earlier version you need to replace the import instruction for
+#         # from pysmartdatamodels import pysmartdatamodels as sdm
 #         
-from pysmartdatamodels import pysmartdatamodels as sdm
+#         
+import pysmartdatamodels as sdm
 import subprocess
 serverUrl = "http://localhost:1026" # supposed that your broker is installed in localhost. Edit to match your configuration
 dataModel = "ConsumptionCost"
 subject = "dataModel.Consumption"
-year = "{'type': 'Property', 'value': '2022'}"
+year = "2022"
 attribute = "year"
 value = year
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-month = "{'type': 'Property', 'value': '07'}"
+month = "07"
 attribute = "month"
 value = month
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-consumptionPoint = {'type': 'Relationship', 'value': 'did:consumpoint:EN04'}
+consumptionPoint = did:consumpoint:EN04
 attribute = "consumptionPoint"
 value = consumptionPoint
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-energyConsumedAndCost = [{'type': 'Property', 'value': {'id': {'type': 'Property', 'value': 'did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX'}, 'energyType': {'type': 'Property', 'value': 'electricity'}, 'supplyName': {'type': 'Property', 'value': 'Electric Company, S.A.'}, 'energyConsumed': {'type': 'Property', 'value': {'measurementUnit': {'type': 'Property', 'value': 'KWH'}, 'value': {'type': 'Property', 'value': 800.0}}}, 'totalCost': {'type': 'Property', 'value': {'currency': {'type': 'Property', 'value': 'EUR'}, 'value': {'type': 'Property', 'value': 374.0}}}}}]
+energyConsumedAndCost = [{'id': 'did:ener:ele:ESXXXXXXXXXXXXXXXXXXXX', 'energyType': 'electricity', 'supplyName': 'Electric Company, S.A.', 'energyConsumed': {'measurementUnit': 'KWH', 'value': 800.0}, 'totalCost': {'currency': 'EUR', 'value': 374.0}}, {'id': 'did:ener:gas:ESXXXXXXXXXXXXXXXXXXXX', 'energyType': 'gas', 'supplyName': 'Gas Company, S.A.', 'energyConsumed': {'measurementUnit': 'MTQ', 'value': 35.0}, 'totalCost': {'currency': 'EUR', 'value': 250.32}}, {'id': 'did:ener:wat:02060767', 'energyType': 'water', 'supplyName': 'Water Company', 'energyConsumed': {'measurementUnit': 'MTQ', 'value': 33.0}, 'totalCost': {'currency': 'EUR', 'value': 110.34}}]
 attribute = "energyConsumedAndCost"
 value = energyConsumedAndCost
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
