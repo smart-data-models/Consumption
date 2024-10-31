@@ -10,13 +10,14 @@
         "areaServed": "https://smartdatamodels.org/areaServed",
         "bbox": {
             "@container": "@list",
-            "@id": "geojson:bbox"
+            "@id": "https://purl.org/geojson/vocab#bbox"
         },
+        "code": "https://smartdatamodels.org/dataModel.Consumption/code",
         "consumptionPoint": "https://smartdatamodels.org/dataModel.Consumption/consumptionPoint",
         "consumptionPointCategory": "https://smartdatamodels.org/dataModel.Consumption/consumptionPointCategory",
         "coordinates": {
             "@container": "@list",
-            "@id": "geojson:coordinates"
+            "@id": "https://purl.org/geojson/vocab#coordinates"
         },
         "currency": "https://smartdatamodels.org/dataModel.Consumption/currency",
         "dataProvider": "https://smartdatamodels.org/dataProvider",
@@ -28,7 +29,7 @@
         "energyConsumedAndCost": "https://smartdatamodels.org/dataModel.Consumption/energyConsumedAndCost",
         "energyType": "https://smartdatamodels.org/dataModel.Consumption/energyType",
         "id": "@id",
-        "location": "ngsi-ld:location",
+        "location": "https://uri.etsi.org/ngsi-ld/location",
         "measurementUnit": "https://smartdatamodels.org/dataModel.Consumption/measurementUnit",
         "month": "https://smartdatamodels.org/dataModel.Consumption/month",
         "name": "https://smartdatamodels.org/name",
@@ -43,7 +44,7 @@
         "supplyName": "https://smartdatamodels.org/dataModel.Consumption/supplyName",
         "totalCost": "https://smartdatamodels.org/dataModel.Consumption/totalCost",
         "type": "@type",
-        "value": "ngsi-ld:hasValue",
+        "value": "https://uri.etsi.org/ngsi-ld/hasValue",
         "year": "https://smartdatamodels.org/dataModel.Consumption/year"
     }
 }
